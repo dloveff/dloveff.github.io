@@ -279,16 +279,19 @@
             
               <h2 id="开发环境：vs2010+qt4-8">开发环境：vs2010+qt4.8</h2><h4 id="1-在项目文件夹里创建名为*-rc的文件，如main-rc。">1.在项目文件夹里创建名为*.rc的文件，如main.rc。</h4><pre>
 `IDI_ICON1       ICON DISCARDABLE   "main.ico"`</pre>
-
-<h4 id="2-文件中写入IDI_ICON1_ICON_DISCARDABLE_&quot;main-ico&quot;&nbsp;其中，main-ico为图标的文件名。">2.文件中写入IDI_ICON1 ICON DISCARDABLE &quot;main.ico&quot;&nbsp;其中，main.ico为图标的文件名。</h4><h4 id="3-将文件main-ico拷贝到项目文件夹内。">3.将文件main.ico拷贝到项目文件夹内。</h4><h4 id="4-在解决方案资源管理器中，右键点击项目，添加main-rc及main-ico。">4.在解决方案资源管理器中，右键点击项目，添加main.rc及main.ico。</h4><h4 id="5-重新生成解决方案。">5.重新生成解决方案。</h4><p><img src="http://www.dongblog.cn/static/media/article_images/2015/09/02/f83893d3-02a4-4ce1-a5c4-6392c7b35e6e.png" alt=""></p>
-<h2 id="开发环境：qt_creata">开发环境：qt_creata</h2><p>首先准备个ICO图标。例如：myappico.ico</p>
-<p>用记事本新建个文件</p>
-<p>里面就写一行：</p>
+#### 2.文件中写入IDI_ICON1 ICON DISCARDABLE &quot;main.ico&quot;&nbsp;其中，main.ico为图标的文件名。
+#### 3.将文件main.ico拷贝到项目文件夹内。
+#### 4.在解决方案资源管理器中，右键点击项目，添加main.rc及main.ico。
+#### 5.重新生成解决方案。
+![](http://www.dongblog.cn/static/media/article_images/2015/09/02/f83893d3-02a4-4ce1-a5c4-6392c7b35e6e.png)
+## 开发环境：qt_creata
+首先准备个ICO图标。例如：myappico.ico
+用记事本新建个文件
+里面就写一行：
 <pre>
 `IDI_ICON1           ICON   DISCARDABLE   "myappico.ico"`</pre>
-
-<p>保存改名为 myapp.rc并把它和你的图标myappico.ico一起复制到你的QT工程项目的目录。</p>
-<p>用记事本打开你的QT工程文件（如 &quot;myapp.pro&quot; ），在里面最后新添一行</p>
+保存改名为 myapp.rc并把它和你的图标myappico.ico一起复制到你的QT工程项目的目录。
+用记事本打开你的QT工程文件（如 &quot;myapp.pro&quot; ），在里面最后新添一行
 <pre>
 `RC_FILE = myapp.rc`</pre>
             
