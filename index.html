@@ -275,40 +275,18 @@
 
       
         
-          <span itemprop="articleBody">
-            
-              <h1 id="安装：">安装：</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install web.py</span><br></pre></td></tr></table></figure>
+          <h1 id="安装：">安装：</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install web.py</span><br></pre></td></tr></table></figure>
 <blockquote>
 <ul>
 <li>code.py</li>
 </ul>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> web</span><br><span class="line">urls=(</span><br><span class="line">    <span class="string">'/'</span>, <span class="string">'index'</span></span><br><span class="line">    )</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">index</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">GET</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"by dong"</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    app = web.application(urls, globals())</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'/'</span>, <span class="string">'index'</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>第一部分是匹配URL的正则表达式，像/、/help/faq、/item/(\d+)等(\d+将匹配数字)。</li>
-<li>第二部分是接受请求的类名称，像index、view</li>
-<li>app = web.application(urls, globals())</li>
-<li>告诉web.py去创建一个基于我们刚提交的URL列表的application。这个application会在这个文件的全局命名空间中查找对应类。</li>
-</ul>
-</blockquote>
-<h1 id="运行">运行</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python code.py</span><br><span class="line"> <span class="comment">#默认使用8080端口，使用其它端口</span></span><br><span class="line">python code.py <span class="number">1234</span></span><br></pre></td></tr></table></figure>
-<h1 id="访问">访问</h1><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:8080/</span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>code2.py</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> web</span><br><span class="line">render = web.template.render(<span class="string">'templates/'</span>)</span><br><span class="line"><span class="comment">#告诉web.py到你的模板目录中去查找模板</span></span><br><span class="line"></span><br><span class="line">urls=(</span><br><span class="line">    <span class="string">'/'</span>, <span class="string">'index'</span></span><br><span class="line">    )</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">index</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">GET</span><span class="params">(self)</span>:</span></span><br><span class="line">        name = <span class="string">'li'</span></span><br><span class="line">        <span class="comment">#return render.index(None)</span></span><br><span class="line">        <span class="keyword">return</span> render.index(name)</span><br><span class="line">        <span class="comment">#（'index' 是模板的名字，'name' 是传入模板的一个参数）</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    app = web.application(urls, globals())</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>templates/index.html</li>
-</ul>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$def with (name)</span><br><span class="line">$if name:</span><br><span class="line">    I just wanted to say <span class="tag">&lt;<span class="title">em</span>&gt;</span>by <span class="tag">&lt;/<span class="title">em</span>&gt;</span> to $name.</span><br><span class="line">$else:</span><br><span class="line">    <span class="tag">&lt;<span class="title">em</span>&gt;</span>by <span class="tag">&lt;/<span class="title">em</span>&gt;</span> dong</span><br></pre></td></tr></table></figure>
-            
-          </span>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/10/27/web-py简单使用/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -498,9 +476,7 @@
 
       
         
-          <span itemprop="articleBody">
-            
-              <blockquote>
+          <blockquote>
 <ul>
 <li>安装</li>
 </ul>
@@ -518,38 +494,11 @@
 </ul>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip show [package]</span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>程序列表</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip list</span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>安装程序</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install [package]</span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>删除程序</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip uninstall [package]</span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>查找程序</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip search [package]</span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>安装程序打包</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip zip [package]</span><br></pre></td></tr></table></figure>
-            
-          </span>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/10/27/pip使用说明/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -776,340 +725,13 @@
 
 
     
-      
-
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                <a class="post-title-link" href="/2015/10/27/Django报错100131/" itemprop="url">
-                  Django报错100131
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2015-10-27T21:06:23+08:00" content="2015-10-27">
-              2015-10-27
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/10/27/Django报错100131/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/27/Django报错100131/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <p><img src="http://www.dongblog.cn/static/media/article_images/2015/09/02/13451092.png" alt="cmd-markdown-logo"></p>
-<blockquote>
-<ul>
-<li>运行</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py migrate</span><br></pre></td></tr></table></figure>
-<p><img src="http://www.dongblog.cn/static/media/article_images/2015/09/02/13534131.png" alt="cmd-markdown-logo"></p>
-<blockquote>
-<ul>
-<li>开始—-&gt;运行—-&gt;cmd，或者是window+R组合键，调出命令窗口</li>
-<li>输入命令：netstat -ano，列出所有端口的情况</li>
-<li>如果是端口8000被占用，关闭占用端口的程序即可(酷狗使用8000端口)，或者是改用其它端口</li>
-</ul>
-</blockquote>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                <a class="post-title-link" href="/2015/10/27/设置QT应用程序图标/" itemprop="url">
-                  设置QT应用程序图标
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2015-10-27T19:29:49+08:00" content="2015-10-27">
-              2015-10-27
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Qt/" itemprop="url" rel="index">
-                    <span itemprop="name">Qt</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/10/27/设置QT应用程序图标/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/27/设置QT应用程序图标/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <h1 id="开发环境：vs2010+qt4-8">开发环境：vs2010+qt4.8</h1><hr>
-<blockquote>
-<ul>
-<li>1.在项目文件夹里创建名为*.rc的文件，如main.rc。</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IDI_ICON1       ICON DISCARDABLE    <span class="string">"main.ico"</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>2.文件中写入IDI_ICON1 ICON DISCARDABLE “main.ico” 其中，main.ico为图标的文件名。</li>
-<li>3.将文件main.ico拷贝到项目文件夹内。</li>
-<li>4.在解决方案资源管理器中，右键点击项目，添加main.rc及main.ico。</li>
-<li>5.重新生成解决方案。</li>
-</ul>
-</blockquote>
-<p><img src="http://www.dongblog.cn/static/media/article_images/2015/09/02/f83893d3-02a4-4ce1-a5c4-6392c7b35e6e.png" alt="cmd-markdown-logo"></p>
-<hr>
-<h1 id="开发环境：qt_creata">开发环境：qt_creata</h1><blockquote>
-<ul>
-<li>首先准备个ICO图标。例如：myappico.ico</li>
-<li>用记事本新建个文件</li>
-<li>里面就写一行：</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IDI_ICON1           ICON   DISCARDABLE   <span class="string">"myappico.ico"</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>保存改名为 myapp.rc并把它和你的图标myappico.ico一起复制到你的QT工程项目的目录。</li>
-<li>用记事本打开你的QT工程文件（如 “myapp.pro” ），在里面最后新添一行</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RC_FILE = myapp.rc</span><br></pre></td></tr></table></figure>
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                <a class="post-title-link" href="/2015/10/24/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2015-10-24T21:27:18+08:00" content="2015-10-24">
-              2015-10-24
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/10/24/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/24/hello-world/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
         </div>
@@ -1148,21 +770,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
