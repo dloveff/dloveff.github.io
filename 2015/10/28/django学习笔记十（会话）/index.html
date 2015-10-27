@@ -1,0 +1,732 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+    <link href='//fonts.lug.ustc.edu.cn/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+
+  <meta name="description" content="个人博客" />
+
+
+
+
+  <meta name="keywords" content="Django," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="方法一：1.创建工程12345678#工程名django-admin.py startproject project-nameex:django-admin.py startproject mysite#app名python manage.py startapp app-nameex:python manage.py startapp blog
+2.修改settings.py123#apps中添加">
+<meta property="og:type" content="article">
+<meta property="og:title" content="django学习笔记十（会话）">
+<meta property="og:url" content="http://codelife.top/2015/10/28/django学习笔记十（会话）/index.html">
+<meta property="og:site_name" content="Dong's Blog">
+<meta property="og:description" content="方法一：1.创建工程12345678#工程名django-admin.py startproject project-nameex:django-admin.py startproject mysite#app名python manage.py startapp app-nameex:python manage.py startapp blog
+2.修改settings.py123#apps中添加">
+<meta property="og:image" content="http://7xkw0s.com1.z0.glb.clouddn.com/django学习笔记10.png">
+<meta property="og:updated_time" content="2015-10-27T16:43:12.467Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="django学习笔记十（会话）">
+<meta name="twitter:description" content="方法一：1.创建工程12345678#工程名django-admin.py startproject project-nameex:django-admin.py startproject mysite#app名python manage.py startapp app-nameex:python manage.py startapp blog
+2.修改settings.py123#apps中添加">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: '',
+    sidebar: 'hide',
+    motion: true
+  };
+</script>
+
+  <title> django学习笔记十（会话） | Dong's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Dong's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">DongBlog</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                django学习笔记十（会话）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-10-28T00:32:32+08:00" content="2015-10-28">
+              2015-10-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/10/28/django学习笔记十（会话）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/django学习笔记十（会话）/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><h1 id="方法一：">方法一：</h1><h1 id="1-创建工程">1.创建工程</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#工程名</span></span><br><span class="line">django-admin.py startproject project-name</span><br><span class="line">ex:</span><br><span class="line">django-admin.py startproject mysite</span><br><span class="line"><span class="comment">#app名</span></span><br><span class="line">python manage.py startapp app-name</span><br><span class="line">ex:</span><br><span class="line">python manage.py startapp blog</span><br></pre></td></tr></table></figure>
+<h1 id="2-修改settings-py">2.修改settings.py</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#apps中添加app名(blog)</span></span><br><span class="line"><span class="comment">#更改语言</span></span><br><span class="line">LANGUAGE_CODE = <span class="string">'zh-cn'</span></span><br></pre></td></tr></table></figure>
+<h1 id="3-修改urls-py">3.修改urls.py</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#增加</span></span><br><span class="line">url(<span class="string">r'^register/$'</span>, <span class="string">'blog.views.register'</span>),</span><br><span class="line">url(<span class="string">r'^login/$'</span>, <span class="string">'blog.views.login'</span>),</span><br><span class="line">url(<span class="string">r'^index/$'</span>, <span class="string">'blog.views.index'</span>),</span><br><span class="line">url(<span class="string">r'^logout/$'</span>, <span class="string">'blog.views.logout'</span>),</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h1 id="4-增加register-html,_login-html,_index-html文件，放到blog/templates/">4.增加register.html, login.html, index.html文件，放到blog/templates/</h1><h1 id="register-html">register.html</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span> </span><br><span class="line"><span class="doctype">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span> <span class="attribute">xmlns</span>=<span class="value">"http://www.w3.org/1999/xhtml"</span> <span class="attribute">xml:lang</span>=<span class="value">"en"</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Content-Type"</span> <span class="attribute">content</span>=<span class="value">"text/html; charset=UTF-8"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">title</span>&gt;</span>&#123;&#123;title&#125;&#125;<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">h1</span>&gt;</span>register<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">form</span> <span class="attribute">method</span>=<span class="value">"post"</span>&gt;</span></span><br><span class="line">&#123;&#123;uf.as_p&#125;&#125;</span><br><span class="line"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"submit"</span> <span class="attribute">value</span>=<span class="value">"ok"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="login-html">login.html</h1><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt; </span><br><span class="line">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;</span><br><span class="line">&lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;</span><br><span class="line">    &lt;title&gt;&#123;&#123;title&#125;&#125;&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;h1&gt;login&lt;/h1&gt;</span><br><span class="line">&lt;form method="post"&gt;</span><br><span class="line">&#123;&#123;uf.as_p&#125;&#125;</span><br><span class="line">&lt;input type="submit" value="ok"/&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="index-html">index.html</h1><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt; </span><br><span class="line">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;</span><br><span class="line">&lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;</span><br><span class="line">    &lt;title&gt;&#123;&#123;title&#125;&#125;&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">&lt;h1&gt;welcom &#123;&#123;username&#125;&#125; &lt;/h1&gt;</span><br><span class="line">&lt;a href='/logout/'&gt;logout&lt;/a&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="5-修改models-py">5.修改models.py</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    username = models.CharField(max_length=<span class="number">30</span>)</span><br><span class="line">    password = models.CharField(max_length=<span class="number">30</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__unicode__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.usernaeme, self.password</span><br></pre></td></tr></table></figure>
+<h1 id="6-修改views-py">6.修改views.py</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render_to_response</span><br><span class="line"><span class="keyword">from</span> django <span class="keyword">import</span> forms</span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse,HttpResponseRedirect</span><br><span class="line"><span class="keyword">from</span> models <span class="keyword">import</span> User</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserForm</span><span class="params">(forms.Form)</span>:</span></span><br><span class="line">    username = forms.CharField()</span><br><span class="line">    password = forms.CharField(widget=forms.PasswordInput)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">register</span><span class="params">(req)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> req.method == <span class="string">"POST"</span>:</span><br><span class="line">        uf = UserForm(req.POST)</span><br><span class="line">        <span class="keyword">if</span> uf.is_valid():</span><br><span class="line">            username = uf.cleaned_data[<span class="string">'username'</span>]</span><br><span class="line">            password = uf.cleaned_data[<span class="string">'password'</span>]</span><br><span class="line">            User.objects.create(username = username, password = password)</span><br><span class="line">            <span class="keyword">print</span> username, password</span><br><span class="line">            <span class="comment">#return HttpResponse("OK")</span></span><br><span class="line">            <span class="keyword">return</span> HttpResponseRedirect(<span class="string">'/login/'</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        uf = UserForm()</span><br><span class="line">    <span class="keyword">return</span> render_to_response(<span class="string">'register.html'</span>, &#123;<span class="string">'uf'</span>:uf&#125;)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">login</span><span class="params">(req)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> req.method == <span class="string">"POST"</span>:</span><br><span class="line">        uf = UserForm(req.POST)</span><br><span class="line">        <span class="keyword">if</span> uf.is_valid():</span><br><span class="line">            username = uf.cleaned_data[<span class="string">'username'</span>]</span><br><span class="line">            password = uf.cleaned_data[<span class="string">'password'</span>]</span><br><span class="line">            users = User.objects.filter(username__exact = username, password__exact = password)</span><br><span class="line">            <span class="keyword">if</span> users:</span><br><span class="line">                response = HttpResponseRedirect(<span class="string">'/index/'</span>)</span><br><span class="line">                response.set_cookie(<span class="string">'username'</span>, username, <span class="number">3600</span>)</span><br><span class="line">                <span class="keyword">return</span> response</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> HttpResponseRedirect(<span class="string">'/login/'</span>)</span><br><span class="line">                </span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        uf = UserForm()</span><br><span class="line">    <span class="keyword">return</span> render_to_response(<span class="string">'login.html'</span>, &#123;<span class="string">'uf'</span>:uf&#125;)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(req)</span>:</span></span><br><span class="line">    username = req.COOKIES.get(<span class="string">'username'</span>, <span class="string">''</span>)</span><br><span class="line">    <span class="keyword">return</span> render_to_response(<span class="string">'index.html'</span>, &#123;<span class="string">'username'</span>:username&#125;)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">logout</span><span class="params">(req)</span>:</span></span><br><span class="line">    response = HttpResponse()</span><br><span class="line">    response.delete_cookie(<span class="string">'username'</span>)</span><br><span class="line">    <span class="keyword">return</span> response</span><br></pre></td></tr></table></figure>
+<h1 id="方法二(推荐(安全))：">方法二(推荐(安全))：</h1><blockquote>
+<ul>
+<li>方法二中不用blog/models.py文件默认，不用修改</li>
+<li>基于方法一修改views.py</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render_to_response</span><br><span class="line"><span class="keyword">from</span> django <span class="keyword">import</span> forms</span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse, HttpResponseRedirect</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserForm</span><span class="params">(forms.Form)</span>:</span></span><br><span class="line">    username = forms.CharField(max_length=<span class="number">30</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">login</span><span class="params">(req)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> req.method == <span class="string">"POST"</span>:</span><br><span class="line">        uf = UserForm(req.POST)</span><br><span class="line">        <span class="keyword">if</span> uf.is_valid():</span><br><span class="line">            username = uf.cleaned_data[<span class="string">'username'</span>]</span><br><span class="line">            req.session[<span class="string">'username'</span>] = username</span><br><span class="line">            <span class="keyword">return</span> HttpResponseRedirect(<span class="string">'/index/'</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        uf = UserForm()</span><br><span class="line">    <span class="keyword">return</span> render_to_response(<span class="string">'login.html'</span>, &#123;<span class="string">'uf'</span>:uf&#125;)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(req)</span>:</span></span><br><span class="line">    username=req.session.get(<span class="string">'username'</span>, <span class="string">'anybody'</span>)</span><br><span class="line">    <span class="keyword">return</span> render_to_response(<span class="string">'index.html'</span>, &#123;<span class="string">'username'</span>:username&#125;)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">logout</span><span class="params">(req)</span>:</span></span><br><span class="line">    <span class="keyword">del</span> req.session[<span class="string">'username'</span>]</span><br><span class="line">    <span class="keyword">return</span> HttpResponse(<span class="string">'logout ok'</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>chrome goole浏览器:</li>
+<li>设置–显示高级设置–内容设置–所有Cookie和网站数据;内容：输入后加密的字符(方法一中直接可以看到输入的内容)</li>
+</ul>
+</blockquote>
+<p><img src="http://7xkw0s.com1.z0.glb.clouddn.com/django学习笔记10.png" alt="http://7xkw0s.com1.z0.glb.clouddn.com/django学习笔记10.png"></p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Django/" rel="tag">#Django</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/10/28/django学习笔记九（文件上传）/" rel="next" title="django学习笔记九（文件上传）">
+                <i class="fa fa-chevron-left"></i> django学习笔记九（文件上传）
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/10/28/django学习笔记十一（用户管理Auth系统使用）/" rel="prev" title="django学习笔记十一（用户管理Auth系统使用）">
+                django学习笔记十一（用户管理Auth系统使用） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2015/10/28/django学习笔记十（会话）/"
+     data-title="django学习笔记十（会话）"
+     data-content=""
+     data-url="http://codelife.top/2015/10/28/django学习笔记十（会话）/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/10/28/django学习笔记十（会话）/"
+           data-title="django学习笔记十（会话）" data-url="http://codelife.top/2015/10/28/django学习笔记十（会话）/">
+      </div>
+    
+  </div>
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="http://www.lagou.com/image1/M00/05/59/Cgo8PFTUd9CAd7LgAAKgwOHqUag402.PNG" alt="dong" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">dong</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">个人博客</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://git.oschina.net/dloveff" target="_blank">
+                  <i class="fa fa-github fa-fw"></i> GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#方法一："><span class="nav-number">1.</span> <span class="nav-text">方法一：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-创建工程"><span class="nav-number">2.</span> <span class="nav-text">1.创建工程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-修改settings-py"><span class="nav-number">3.</span> <span class="nav-text">2.修改settings.py</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-修改urls-py"><span class="nav-number">4.</span> <span class="nav-text">3.修改urls.py</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-增加register-html,_login-html,_index-html文件，放到blog/templates/"><span class="nav-number">5.</span> <span class="nav-text">4.增加register.html, login.html, index.html文件，放到blog/templates/</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#register-html"><span class="nav-number">6.</span> <span class="nav-text">register.html</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#login-html"><span class="nav-number">7.</span> <span class="nav-text">login.html</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#index-html"><span class="nav-number">8.</span> <span class="nav-text">index.html</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-修改models-py"><span class="nav-number">9.</span> <span class="nav-text">5.修改models.py</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-修改views-py"><span class="nav-number">10.</span> <span class="nav-text">6.修改views.py</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法二(推荐(安全))："><span class="nav-number">11.</span> <span class="nav-text">方法二(推荐(安全))：</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">dong</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"codelife"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+    
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+
+  
+  
+
+</body>
+</html>

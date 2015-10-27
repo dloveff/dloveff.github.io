@@ -217,8 +217,8 @@
             
             
               
-                <a class="post-title-link" href="/2015/10/27/pip使用说明/" itemprop="url">
-                  pip使用说明
+                <a class="post-title-link" href="/2015/10/27/django学习笔记六/" itemprop="url">
+                  django学习笔记六
                 </a>
               
             
@@ -228,7 +228,7 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-10-27T21:21:25+08:00" content="2015-10-27">
+            <time itemprop="dateCreated" datetime="2015-10-27T23:45:38+08:00" content="2015-10-27">
               2015-10-27
             </time>
           </span>
@@ -254,8 +254,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/10/27/pip使用说明/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/27/pip使用说明/" itemprop="commentsCount"></span>
+                <a href="/2015/10/27/django学习笔记六/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/27/django学习笔记六/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -275,26 +275,11 @@
 
       
         
-          <blockquote>
-<ul>
-<li>安装</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install python-pip</span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>查看帮助</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip</span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>查看版本信息</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip show [package]</span><br></pre></td></tr></table></figure>
+          <h1 id="安装ipython">安装ipython</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install ipython</span><br></pre></td></tr></table></figure>
+<h1 id="创建记录方法一：">创建记录方法一：</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">python manage.py shell</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> blog.models <span class="keyword">import</span> Employee</span><br><span class="line">Employee</span><br><span class="line">emp = Employee()</span><br><span class="line">emp.name = <span class="string">'dong'</span></span><br><span class="line">emp.save()</span><br></pre></td></tr></table></figure>
+<h1 id="查看数据库">查看数据库</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">mysql -uroot -p</span><br><span class="line">use mysite;</span><br><span class="line">select * <span class="keyword">from</span> blog_employee;</span><br></pre></td></tr></table></figure>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/27/pip使用说明/#more" rel="contents">
+            <a class="btn" href="/2015/10/27/django学习笔记六/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -332,8 +317,8 @@
             
             
               
-                <a class="post-title-link" href="/2015/10/27/删除setup-py安装的软件/" itemprop="url">
-                  删除setup.py安装的软件
+                <a class="post-title-link" href="/2015/10/27/django学习笔记五/" itemprop="url">
+                  django学习笔记五
                 </a>
               
             
@@ -343,7 +328,7 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-10-27T21:18:11+08:00" content="2015-10-27">
+            <time itemprop="dateCreated" datetime="2015-10-27T23:37:35+08:00" content="2015-10-27">
               2015-10-27
             </time>
           </span>
@@ -369,8 +354,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/10/27/删除setup-py安装的软件/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/27/删除setup-py安装的软件/" itemprop="commentsCount"></span>
+                <a href="/2015/10/27/django学习笔记五/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/27/django学习笔记五/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -390,344 +375,322 @@
 
       
         
-          <span itemprop="articleBody">
-            
-              <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python setup.py install --record files.txt 记录安装后文件的路径</span><br><span class="line">cat files.txt | xargs rm -rf  删除这些文件</span><br></pre></td></tr></table></figure>
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                <a class="post-title-link" href="/2015/10/27/python安装第三方模块/" itemprop="url">
-                  sae python安装第三方模块
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2015-10-27T21:13:05+08:00" content="2015-10-27">
-              2015-10-27
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/10/27/python安装第三方模块/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/27/python安装第三方模块/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <blockquote>
+          <blockquote>
 <ul>
-<li>当sae上没有自己所需要的第三方模块时，可以使用saecloud install package [package…]将所需要的模块安装到本地应用文件夹下，然后在index.wsgi下添加如何代码：</li>
+<li>注意：要启动数据库</li>
 </ul>
 </blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">root = os.path.dirname(__file__)</span><br><span class="line">sys.path.insert(<span class="number">0</span>, os.path.join(root, <span class="string">'site-packages'</span>))</span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>保存，然后commit 到服务器上，就可以正常使用第三方模块了。</li>
-<li>例:</li>
-<li>操作–上传代码包–上传附件 Pygments-2.0.2.tar.gz</li>
-<li>编辑index.wsgi</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">root = os.path.dirname(__file__)</span><br><span class="line">sys.path ...</span><br></pre></td></tr></table></figure>
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                <a class="post-title-link" href="/2015/10/27/Django报错100131/" itemprop="url">
-                  Django报错100131
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2015-10-27T21:06:23+08:00" content="2015-10-27">
-              2015-10-27
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/10/27/Django报错100131/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/27/Django报错100131/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <p><img src="http://www.dongblog.cn/static/media/article_images/2015/09/02/13451092.png" alt="cmd-markdown-logo"></p>
-<blockquote>
-<ul>
-<li>运行</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py migrate</span><br></pre></td></tr></table></figure>
-<p><img src="http://www.dongblog.cn/static/media/article_images/2015/09/02/13534131.png" alt="cmd-markdown-logo"></p>
-<blockquote>
-<ul>
-<li>开始—-&gt;运行—-&gt;cmd，或者是window+R组合键，调出命令窗口</li>
-<li>输入命令：netstat -ano，列出所有端口的情况</li>
-<li>如果是端口8000被占用，关闭占用端口的程序即可(酷狗使用8000端口)，或者是改用其它端口</li>
-</ul>
-</blockquote>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                <a class="post-title-link" href="/2015/10/27/设置QT应用程序图标/" itemprop="url">
-                  设置QT应用程序图标
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2015-10-27T19:29:49+08:00" content="2015-10-27">
-              2015-10-27
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Qt/" itemprop="url" rel="index">
-                    <span itemprop="name">Qt</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/10/27/设置QT应用程序图标/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/27/设置QT应用程序图标/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h1 id="开发环境：vs2010+qt4-8">开发环境：vs2010+qt4.8</h1><hr>
-<blockquote>
-<ul>
-<li>1.在项目文件夹里创建名为*.rc的文件，如main.rc。</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IDI_ICON1       ICON DISCARDABLE    <span class="string">"main.ico"</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>2.文件中写入IDI_ICON1 ICON DISCARDABLE “main.ico” 其中，main.ico为图标的文件名。</li>
-<li>3.将文件main.ico拷贝到项目文件夹内。</li>
-<li>4.在解决方案资源管理器中，右键点击项目，添加main.rc及main.ico。</li>
-<li>5.重新生成解决方案。</li>
-</ul>
-</blockquote>
-<p><img src="http://www.dongblog.cn/static/media/article_images/2015/09/02/f83893d3-02a4-4ce1-a5c4-6392c7b35e6e.png" alt="cmd-markdown-logo"></p>
+<h1 id="1-创建数据库">1.创建数据库</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br><span class="line">create database mysite default charset = utf8;</span><br></pre></td></tr></table></figure>
+<h1 id="2-修改数据库类型">2.修改数据库类型</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mysite/settings.py</span><br><span class="line">DATABASES = &#123;</span><br><span class="line">    <span class="string">'default'</span>: &#123;</span><br><span class="line">        <span class="string">'ENGINE'</span>: <span class="string">'django.db.backends.mysql'</span>,    //设置数据库类型</span><br><span class="line">        <span class="string">'NAME'</span>: <span class="string">'mysite'</span>,    //名称是上面创建的名称</span><br><span class="line">        <span class="string">'USER'</span>: <span class="string">'root'</span>,        //用户名是数据库的用户名</span><br><span class="line">        <span class="string">'PASSWORD'</span>: <span class="string">'dong'</span>,    //密码是数据库密码</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="3-修改blog/models-py_(创建数据库对象)">3.修改blog/models.py (创建数据库对象)</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Employee</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">     name = models.CharField(max_length = <span class="number">50</span>)</span><br></pre></td></tr></table></figure>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/27/设置QT应用程序图标/#more" rel="contents">
+            <a class="btn" href="/2015/10/27/django学习笔记五/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                <a class="post-title-link" href="/2015/10/27/django学习笔记四（模板标签）/" itemprop="url">
+                  django学习笔记四（模板标签）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-10-27T23:35:45+08:00" content="2015-10-27">
+              2015-10-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/10/27/django学习笔记四（模板标签）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/27/django学习笔记四（模板标签）/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;%if user%&#125;</span><br><span class="line"><span class="tag">&lt;<span class="title">li</span>&gt;</span>name:&#123;&#123;user.name&#125;&#125;<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">&#123;%else%&#125;</span><br><span class="line"><span class="tag">&lt;<span class="title">li</span>&gt;</span>not name:&#123;&#123;user.name&#125;&#125;<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">&#123;%endif%&#125;</span><br><span class="line">&#123;%for book in book_list%&#125;</span><br><span class="line"><span class="tag">&lt;<span class="title">li</span>&gt;</span>&#123;&#123;book&#125;&#125;<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">&#123;%endfor%&#125;</span><br><span class="line">&#123;%for k in user%&#125;</span><br><span class="line"><span class="tag">&lt;<span class="title">li</span>&gt;</span>&#123;&#123;k&#125;&#125;<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">&#123;%endfor%&#125;</span><br><span class="line">&#123;%for kk,v in user.items%&#125;</span><br><span class="line"><span class="tag">&lt;<span class="title">li</span>&gt;</span>&#123;&#123;kk&#125;&#125;:&#123;&#123;v&#125;&#125;<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">&#123;%endfor%&#125;</span><br><span class="line">&#123;%for kk,v in user.items%&#125;</span><br><span class="line"><span class="tag">&lt;<span class="title">li</span>&gt;</span>&#123;&#123;forloop.counter&#125;&#125;.&#123;&#123;kk&#125;&#125;:&#123;&#123;v&#125;&#125;<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">&#123;%endfor%&#125;</span><br></pre></td></tr></table></figure>
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                <a class="post-title-link" href="/2015/10/27/django学习笔记三（模板变量）/" itemprop="url">
+                  django学习笔记三（模板变量）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-10-27T23:27:09+08:00" content="2015-10-27">
+              2015-10-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/10/27/django学习笔记三（模板变量）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/27/django学习笔记三（模板变量）/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h1 id="方法一：(基本数据类型)">方法一：(基本数据类型)</h1><blockquote>
+<ul>
+<li>1.修改blog/templates/index.html</li>
+</ul>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">title</span>&gt;</span>&#123;&#123;title&#125;&#125;<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">h1</span>&gt;</span>hello &#123;&#123;user&#125;&#125;<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="2-修改blog/views-py">2.修改blog/views.py</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">return render_to_response('index.html', &#123;'title':'my page','user':'dong'&#125;)</span><br><span class="line">#title和user要对应index.html中的titles和user</span><br></pre></td></tr></table></figure>
+<h1 id="方法二：(字典)">方法二：(字典)</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">h1</span>&gt;</span>hello &#123;&#123;user.name&#125;&#125; &#123;&#123;user.age&#125;&#125; &#123;&#123;user.sex&#125;&#125;<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line">user = &#123;'name':'dong', 'age':23, 'sex':'male'&#125;</span><br><span class="line">return render_to_response('index.html', &#123;'title':'my page','user':user&#125;)</span><br></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/10/27/django学习笔记三（模板变量）/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                <a class="post-title-link" href="/2015/10/27/django学习笔记二（模板）/" itemprop="url">
+                  django学习笔记二（模板）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-10-27T23:19:44+08:00" content="2015-10-27">
+              2015-10-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/10/27/django学习笔记二（模板）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/27/django学习笔记二（模板）/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h1 id="1-创建模板">1.创建模板</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir blog/templates</span><br><span class="line">vi index.html</span><br></pre></td></tr></table></figure>
+<h1 id="方法一：">方法一：</h1><blockquote>
+<ul>
+<li>创建模板对象</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">blog/views.py</span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</span><br><span class="line"><span class="keyword">from</span> django.template <span class="keyword">import</span> loader,Context</span><br><span class="line"><span class="comment">#创建loader对象，加载对应文件</span></span><br><span class="line">t = loader.get_template(<span class="string">'index.html'</span>)</span><br><span class="line"><span class="comment">#创建Context对象,存放模板的数据</span></span><br><span class="line">c = Context(&#123;&#125;)</span><br><span class="line"><span class="comment">#响应对应的内容</span></span><br><span class="line"><span class="keyword">return</span> HttpResponse(t.render(c))</span><br><span class="line"><span class="comment"># 完整代码</span></span><br><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render</span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</span><br><span class="line"><span class="keyword">from</span> django.template <span class="keyword">import</span> loader,Context</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(req)</span>:</span></span><br><span class="line">    t = loader.get_template(<span class="string">'index.html'</span>)</span><br><span class="line">    c = Context(&#123;&#125;)</span><br><span class="line">    <span class="keyword">return</span> HttpResponse(t.render(c))</span><br></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/10/27/django学习笔记二（模板）/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -753,7 +716,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -794,7 +757,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">21</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
