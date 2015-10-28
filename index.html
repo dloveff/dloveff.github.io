@@ -217,8 +217,8 @@
             
             
               
-                <a class="post-title-link" href="/2015/10/28/python调用C/" itemprop="url">
-                  python 调用C
+                <a class="post-title-link" href="/2015/10/28/使用python开发微信公众平台教程目录汇总/" itemprop="url">
+                  使用python开发微信公众平台教程目录汇总
                 </a>
               
             
@@ -228,7 +228,7 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-10-28T13:50:28+08:00" content="2015-10-28">
+            <time itemprop="dateCreated" datetime="2015-10-28T23:11:59+08:00" content="2015-10-28">
               2015-10-28
             </time>
           </span>
@@ -254,8 +254,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/10/28/python调用C/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/python调用C/" itemprop="commentsCount"></span>
+                <a href="/2015/10/28/使用python开发微信公众平台教程目录汇总/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/使用python开发微信公众平台教程目录汇总/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -275,11 +275,159 @@
 
       
         
-          <h1 id="main-c">main.c</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;stdio.h&gt;</span></span><br><span class="line">int test()</span><br><span class="line">&#123;</span><br><span class="line">   printf(<span class="string">"by dong\n"</span>);</span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="编译">编译</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc main.c -fPIC -shared -o main.so</span><br></pre></td></tr></table></figure>
-<h1 id="control-py">control.py</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> ctypes</span><br><span class="line">so = ctypes.CDLL(<span class="string">"./main.so"</span>)</span><br><span class="line">so.test()</span><br></pre></td></tr></table></figure>
+          <span itemprop="articleBody">
+            
+              <h1 id="开发语言">开发语言</h1><blockquote>
+<ul>
+<li>python, flask, requests</li>
+</ul>
+</blockquote>
+<p>GitHub项目地址: <a href="http://git.oschina.net/dloveff/flask-weixin" target="_blank" rel="external">http://git.oschina.net/dloveff/flask-weixin</a></p>
+<h1 id="托管平台">托管平台</h1><blockquote>
+<ul>
+<li>新浪sae</li>
+</ul>
+</blockquote>
+<h1 id="主要实现功能">主要实现功能</h1><blockquote>
+<ul>
+<li>1.验证服务器</li>
+<li>2.接收信息自动回复</li>
+<li>3.关注自动回复</li>
+<li>4.获取token</li>
+<li>5.创建菜单</li>
+<li>6.响应菜单事件</li>
+<li>7.获取微信服务器IP地址</li>
+<li>8.长链接转短链接</li>
+<li>9.获取用户列表</li>
+<li>10.获取用户基本信息（UnionID机制）</li>
+</ul>
+</blockquote>
+<h1 id="笔记目录">笔记目录</h1><blockquote>
+<ul>
+<li><a href="http://127.0.0.1:4000/2015/10/28/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%B9%B3%E5%8F%B0%E5%BC%80%E5%8F%91%E4%B8%80/" target="_blank" rel="external">微信公众平台开发一: 服务器配置</a></li>
+<li><a href="http://127.0.0.1:4000/2015/10/28/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%B9%B3%E5%8F%B0%E5%BC%80%E5%8F%91%E4%BA%8C/" target="_blank" rel="external">微信公众平台开发二：回复文本消息</a></li>
+<li><a href="http://127.0.0.1:4000/2015/10/28/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%B9%B3%E5%8F%B0%E5%BC%80%E5%8F%91%E4%B8%89/" target="_blank" rel="external">微信公众平台开发三：微信 获取token</a></li>
+<li><a href="http://127.0.0.1:4000/2015/10/28/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%B9%B3%E5%8F%B0%E5%BC%80%E5%8F%91%E5%9B%9B/" target="_blank" rel="external">微信公众平台开发四：微信 菜单创建，查询，删除</a></li>
+<li><a href="">微信公众平台开发五：获取微信服务器IP地址</a></li>
+<li><a href="">微信公众平台开发六：长链接转短链接接口</a></li>
+<li><a href="">微信公众平台开发七：获取用户列表</a></li>
+<li><a href="">微信公众平台开发八：菜单事件</a></li>
+<li><a href="">微信公众平台开发九：获取用户基本信息(UnionID机制)</a></li>
+</ul>
+</blockquote>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                <a class="post-title-link" href="/2015/10/28/微信公众平台开发九/" itemprop="url">
+                  微信公众平台开发九
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-10-28T22:23:00+08:00" content="2015-10-28">
+              2015-10-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/10/28/微信公众平台开发九/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/微信公众平台开发九/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h1 id="获取用户基本信息(UnionID机制)">获取用户基本信息(UnionID机制)</h1><hr>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http请求方式: GET</span><br><span class="line">https://api.weixin.qq.com/cgi-bin/user/info?access_token=ACCESS_TOKEN&amp;openid=OPENID&amp;lang=zh_CN</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>参数  是否必须    说明</li>
+<li>access_token    是   调用接口凭证</li>
+<li>openid  是   普通用户的标识，对当前公众号唯一</li>
+<li>lang    否   返回国家地区语言版本，zh_CN 简体，zh_TW 繁体，en 英语</li>
+</ul>
+</blockquote>
+<h1 id="返回说明">返回说明</h1><blockquote>
+<ul>
+<li>正常情况下，微信会返回下述JSON数据包给公众号：</li>
+</ul>
+</blockquote>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    "<span class="attribute">subscribe</span>": <span class="value"><span class="number">1</span></span>, </span><br><span class="line">    "<span class="attribute">openid</span>": <span class="value"><span class="string">"o6_bmjrPTlm6_2sgVt7hMZOPfL2M"</span></span>, </span><br><span class="line">    "<span class="attribute">nickname</span>": <span class="value"><span class="string">"Band"</span></span>, </span><br><span class="line">    "<span class="attribute">sex</span>": <span class="value"><span class="number">1</span></span>, </span><br><span class="line">    "<span class="attribute">language</span>": <span class="value"><span class="string">"zh_CN"</span></span>, </span><br><span class="line">    "<span class="attribute">city</span>": <span class="value"><span class="string">"广州"</span></span>, </span><br><span class="line">    "<span class="attribute">province</span>": <span class="value"><span class="string">"广东"</span></span>, </span><br><span class="line">    "<span class="attribute">country</span>": <span class="value"><span class="string">"中国"</span></span>, </span><br><span class="line">    "<span class="attribute">headimgurl</span>":    <span class="value"><span class="string">"http://wx.qlogo.cn/mmopen/g3MonUZtNHkdmzicIlibx6iaFqAc56vxLSUfpb6n5WKSYVY0ChQKkiaJSgQ1dZuTOgvLLrhJbERQQ4eMsv84eavHiaiceqxibJxCfHe/0"</span></span>, </span><br><span class="line">   "<span class="attribute">subscribe_time</span>": <span class="value"><span class="number">1382694957</span></span>,</span><br><span class="line">   "<span class="attribute">unionid</span>": <span class="value"><span class="string">" o6_bmasdasdsad6_2sgVt7hMZOPfL"</span></span><br><span class="line">   <span class="string">"remark"</span>: <span class="string">""</span></span>,</span><br><span class="line">   "<span class="attribute">groupid</span>": <span class="value"><span class="number">0</span></span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/28/python调用C/#more" rel="contents">
+            <a class="btn" href="/2015/10/28/微信公众平台开发九/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -317,8 +465,8 @@
             
             
               
-                <a class="post-title-link" href="/2015/10/28/字典/" itemprop="url">
-                  字典
+                <a class="post-title-link" href="/2015/10/28/微信公众平台开发八/" itemprop="url">
+                  微信公众平台开发八
                 </a>
               
             
@@ -328,7 +476,7 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-10-28T13:39:01+08:00" content="2015-10-28">
+            <time itemprop="dateCreated" datetime="2015-10-28T22:22:43+08:00" content="2015-10-28">
               2015-10-28
             </time>
           </span>
@@ -354,8 +502,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/10/28/字典/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/字典/" itemprop="commentsCount"></span>
+                <a href="/2015/10/28/微信公众平台开发八/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/微信公众平台开发八/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -375,11 +523,27 @@
 
       
         
-          <h1 id="创建：生成字典">创建：生成字典</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">createDict</span><span class="params">(key, value)</span>:</span></span><br><span class="line">    dicts = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> (k, v) <span class="keyword">in</span> zip(key, value):</span><br><span class="line">        dicts[k] = v</span><br><span class="line">    <span class="keyword">print</span> dicts</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    a = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br><span class="line">    b = [<span class="string">'1'</span>, <span class="string">'2'</span>]</span><br><span class="line">    <span class="comment"># createDict('a', 'b')</span></span><br><span class="line">    createDict(a, b)</span><br></pre></td></tr></table></figure>
-<h1 id="字典的基本形态">字典的基本形态</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dic=&#123;key1:value1, key2:value2...&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="创建方式一：直接型">创建方式一：直接型</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dict1=&#123;&#125;  </span><br><span class="line">dict2=&#123;<span class="string">'name'</span>:<span class="string">'earth'</span>, <span class="string">'port'</span>:<span class="string">'80'</span>&#125;</span><br><span class="line">dict = &#123;<span class="string">'name'</span>:<span class="string">'dong'</span>, <span class="string">'age'</span>:<span class="string">'24'</span>, <span class="string">'port'</span>:<span class="string">'80'</span>&#125;</span><br></pre></td></tr></table></figure>
+          <h1 id="菜单事件">菜单事件</h1><hr>
+<blockquote>
+<ul>
+<li>点击菜单拉取消息时的事件推送</li>
+</ul>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">xml</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">ToUserName</span>&gt;</span><span class="cdata">&lt;![CDATA[toUser]]&gt;</span><span class="tag">&lt;/<span class="title">ToUserName</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">FromUserName</span>&gt;</span><span class="cdata">&lt;![CDATA[FromUser]]&gt;</span><span class="tag">&lt;/<span class="title">FromUserName</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">CreateTime</span>&gt;</span>123456789<span class="tag">&lt;/<span class="title">CreateTime</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">MsgType</span>&gt;</span><span class="cdata">&lt;![CDATA[event]]&gt;</span><span class="tag">&lt;/<span class="title">MsgType</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">Event</span>&gt;</span><span class="cdata">&lt;![CDATA[CLICK]]&gt;</span><span class="tag">&lt;/<span class="title">Event</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">EventKey</span>&gt;</span><span class="cdata">&lt;![CDATA[EVENTKEY]]&gt;</span><span class="tag">&lt;/<span class="title">EventKey</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">xml</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>参数  描述</li>
+<li>ToUserName  开发者微信号</li>
+<li>FromUserName    发送方帐号（一个OpenID）</li>
+<li>CreateTime  消息创建时间 （整型）</li>
+<li>MsgType 消息类型，event</li>
+<li>Event   事件类型，CLICK</li>
+<li>EventKey    事件KEY值，与自定义菜单接口中KEY值对应</li>
+</ul>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">菜单：</span><br><span class="line">&#123;</span><br><span class="line">     "button":[</span><br><span class="line">     &#123;  </span><br><span class="line">          "type":"click",</span><br><span class="line">          "name":"今日歌曲",</span><br><span class="line">          "key":"V1001_TODAY_MUSIC"</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">           "name":"菜单",</span><br><span class="line">           "sub_button":[</span><br><span class="line">           &#123;    </span><br><span class="line">               "type":"view",</span><br><span class="line">               "name":"搜索",</span><br><span class="line">               "url":"http://www.soso.com/"</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">               "type":"view",</span><br><span class="line">               "name":"视频",</span><br><span class="line">               "url":"http://v.qq.com/"</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">               "type":"click",</span><br><span class="line">               "name":"赞一下我们",</span><br><span class="line">               "key":"V1001_GOOD"</span><br><span class="line">            &#125;]</span><br><span class="line">       &#125;]</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/28/字典/#more" rel="contents">
+            <a class="btn" href="/2015/10/28/微信公众平台开发八/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -417,8 +581,8 @@
             
             
               
-                <a class="post-title-link" href="/2015/10/28/元组/" itemprop="url">
-                  元组
+                <a class="post-title-link" href="/2015/10/28/微信公众平台开发七/" itemprop="url">
+                  微信公众平台开发七
                 </a>
               
             
@@ -428,7 +592,7 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-10-28T13:33:54+08:00" content="2015-10-28">
+            <time itemprop="dateCreated" datetime="2015-10-28T22:21:17+08:00" content="2015-10-28">
               2015-10-28
             </time>
           </span>
@@ -454,8 +618,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/10/28/元组/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/元组/" itemprop="commentsCount"></span>
+                <a href="/2015/10/28/微信公众平台开发七/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/微信公众平台开发七/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -475,20 +639,36 @@
 
       
         
-          <h1 id="元组中的元素值是不允许修改">元组中的元素值是不允许修改</h1><blockquote>
+          <h1 id="获取用户列表">获取用户列表</h1><hr>
+<blockquote>
 <ul>
-<li></li>
+<li>公众号可通过本接口来获取帐号的关注者列表，关注者列表由一串OpenID（加密后的微信号，每个用户对每个公众号的OpenID是唯一的）组成。一次拉取调用最多拉取10000个关注者的OpenID，可以通过多次拉取的方式来满足需求。</li>
 </ul>
 </blockquote>
-<h1 id="创建：">创建：</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tup1 = ()</span><br><span class="line"><span class="comment">#元组中只包含一个元素时，需要在元素后面添加逗号</span></span><br><span class="line">tup2 = (<span class="string">'5'</span>,)</span><br><span class="line">tup3 = (<span class="string">'physics'</span>, <span class="string">'chemistry'</span>, <span class="number">1997</span>, <span class="number">2000</span>)</span><br></pre></td></tr></table></figure>
-<h1 id="访问">访问</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">tup1 = (<span class="string">'physics'</span>, <span class="string">'chemistry'</span>, <span class="number">1997</span>, <span class="number">2000</span>);</span><br><span class="line">tup2 = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span> );</span><br><span class="line"><span class="keyword">print</span> tup1[<span class="number">0</span>]</span><br><span class="line"><span class="keyword">print</span> tup2[<span class="number">1</span>:<span class="number">5</span>]</span><br><span class="line"><span class="comment">#输出</span></span><br><span class="line">physics</span><br><span class="line">(<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-<h1 id="修改">修改</h1><blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http请求方式: GET（请使用https协议）</span><br><span class="line">https://api.weixin.qq.com/cgi-bin/user/get?access_token=ACCESS_TOKEN&amp;next_openid=NEXT_OPENID</span><br></pre></td></tr></table></figure>
+<blockquote>
 <ul>
-<li>元组中的元素值是不允许修改的，但可以对元组进行连接组合</li>
+<li>参数  是否必须    说明</li>
+<li>access_token    是   调用接口凭证</li>
+<li><p>next_openid 是   第一个拉取的OPENID，不填默认从头开始拉取</p>
+</li>
+<li><p>正确时返回JSON数据包：正确时返回JSON数据包：</p>
+</li>
 </ul>
 </blockquote>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;"<span class="attribute">total</span>":<span class="value"><span class="number">2</span></span>,"<span class="attribute">count</span>":<span class="value"><span class="number">2</span></span>,"<span class="attribute">data</span>":<span class="value">&#123;"<span class="attribute">openid</span>":<span class="value">[<span class="string">""</span>,<span class="string">"OPENID1"</span>,<span class="string">"OPENID2"</span>]</span>&#125;</span>,"<span class="attribute">next_openid</span>":<span class="value"><span class="string">"NEXT_OPENID"</span></span>&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>参数  说明</li>
+<li>total   关注该公众账号的总用户数</li>
+<li>count   拉取的OPENID个数，最大值为10000</li>
+<li>data    列表数据，OPENID的列表</li>
+<li>next_openid 拉取列表的最后一个用户的OPENID</li>
+</ul>
+</blockquote>
+<h1 id="错误时返回JSON数据包（示例为无效AppID错误）：">错误时返回JSON数据包（示例为无效AppID错误）：</h1><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;"<span class="attribute">errcode</span>":<span class="value"><span class="number">40013</span></span>,"<span class="attribute">errmsg</span>":<span class="value"><span class="string">"invalid appid"</span></span>&#125;</span><br></pre></td></tr></table></figure>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/28/元组/#more" rel="contents">
+            <a class="btn" href="/2015/10/28/微信公众平台开发七/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -526,8 +706,8 @@
             
             
               
-                <a class="post-title-link" href="/2015/10/28/pythonQueue模块/" itemprop="url">
-                  python Queue模块
+                <a class="post-title-link" href="/2015/10/28/微信公众平台开发六/" itemprop="url">
+                  微信公众平台开发六
                 </a>
               
             
@@ -537,7 +717,7 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-10-28T13:28:07+08:00" content="2015-10-28">
+            <time itemprop="dateCreated" datetime="2015-10-28T22:19:46+08:00" content="2015-10-28">
               2015-10-28
             </time>
           </span>
@@ -563,8 +743,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/10/28/pythonQueue模块/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/pythonQueue模块/" itemprop="commentsCount"></span>
+                <a href="/2015/10/28/微信公众平台开发六/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/微信公众平台开发六/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -584,146 +764,46 @@
 
       
         
-          <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Queue</span><br><span class="line">myqueue = Queue.Queue(maxsize = <span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+          <span itemprop="articleBody">
+            
+              <h1 id="长链接转短链接接口">长链接转短链接接口</h1><hr>
 <blockquote>
 <ul>
-<li>Queue.Queue类即是一个队列的同步实现。队列长度可为无限或者有限。可通过Queue的构造函数的可选参数maxsize来设定队列长度。如果maxsize小于1就表示队列长度无限。</li>
-<li>将一个值放入队列中</li>
+<li>主要使用场景： 开发者用于生成二维码的原链接（商品、支付二维码等）太长导致扫码速度和成功率下降，将原长链接通过此接口转成短链接再生成二维码将大大提升扫码速度和成功率。</li>
 </ul>
 </blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myqueue.put(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http请求方式: POST</span><br><span class="line">https://api.weixin.qq.com/cgi-bin/shorturl?access_token=ACCESS_TOKEN</span><br></pre></td></tr></table></figure>
 <blockquote>
 <ul>
-<li>调用队列对象的put()方法在队尾插入一个项目。put()有两个参数，第一个item为必需的，为插入项目的值；第二个block为可选参数，默认为1。如果队列当前为空且block为1，put()方法就使调用线程暂停,直到空出一个数据单元。如果block为0，put方法将引发Full异常。</li>
-<li>将一个值从队列中取出</li>
+<li>参数  是否必须    说明</li>
+<li>access_token    是   调用接口凭证</li>
+<li>action  是   此处填long2short，代表长链接转短链接</li>
+<li>long_url    是   需要转换的长链接，支持<a href="http://、https://、weixin://wxpay" target="_blank" rel="external">http://、https://、weixin://wxpay</a> 格式的url</li>
 </ul>
 </blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myqueue.get()</span><br></pre></td></tr></table></figure>
+<h1 id="调用举例">调用举例</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -d <span class="string">"&#123;\"action\":\"long2short\",\"long_url\":\"http://wap.koudaitong.com/v2/showcase/goods?alias=128wi9shh&amp;spm=h56083&amp;redirect_count=1\"&#125;"</span> <span class="string">"https://api.weixin.qq.com/cgi-bin/shorturl?access_token=ACCESS_TOKEN"</span></span><br></pre></td></tr></table></figure>
+<h1 id="返回说明">返回说明</h1><blockquote>
+<ul>
+<li>正常情况下，微信会返回下述JSON数据包给公众号：</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"errcode"</span>:<span class="number">0</span>,<span class="string">"errmsg"</span>:<span class="string">"ok"</span>,<span class="string">"short_url"</span>:<span class="string">"http:\/\/w.url.cn\/s\/AvCo6Ih"</span>&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <ul>
-<li>调用队列对象的get()方法从队头删除并返回一个项目。可选参数为block，默认为True。如果队列为空且block为True，get()就使调用线程暂停，直至有项目可用。如果队列为空且block为False，队列将引发Empty异常。</li>
+<li>参数  说明</li>
+<li>errcode 错误码。</li>
+<li>errmsg  错误信息。</li>
+<li><p>short_url   短链接。</p>
+</li>
+<li><p>错误时微信会返回错误码等信息，JSON数据包示例如下（该示例为AppID无效错误）:</p>
+</li>
 </ul>
 </blockquote>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/28/pythonQueue模块/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;"<span class="attribute">errcode</span>":<span class="value"><span class="number">40013</span></span>,"<span class="attribute">errmsg</span>":<span class="value"><span class="string">"invalid appid"</span></span>&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="getWxMsg-py">getWxMsg.py</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding:utf-8</span></span><br><span class="line"><span class="keyword">import</span> urllib</span><br><span class="line"><span class="keyword">import</span> urllib2</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="comment"># 获取access_token</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getToken</span><span class="params">(appid, secret)</span>:</span></span><br><span class="line">    gettoken = <span class="string">'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid='</span> + appid +<span class="string">'&amp;secret='</span> + secret</span><br><span class="line">    f = urllib2.urlopen(gettoken)</span><br><span class="line">    stringJson = f.read()</span><br><span class="line">    access_token = json.loads(stringJson)[<span class="string">'access_token'</span>]</span><br><span class="line">    <span class="keyword">return</span> access_token</span><br><span class="line"><span class="comment"># 获取微信服务器IP地址</span></span><br><span class="line"><span class="comment"># 返回的是一个列表</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getIplist</span><span class="params">(token)</span>:</span></span><br><span class="line">    ipurl = <span class="string">'https://api.weixin.qq.com/cgi-bin/getcallbackip?access_token='</span> + token</span><br><span class="line">    f = urllib2.urlopen(ipurl)</span><br><span class="line">    stringJson = f.read()</span><br><span class="line">    iplist = json.loads(stringJson)[<span class="string">'ip_list'</span>]</span><br><span class="line">    <span class="keyword">return</span> iplist</span><br><span class="line"><span class="comment"># 长链接转短链接接口</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">long2short</span><span class="params">(long_url, token)</span>:</span></span><br><span class="line">    data = <span class="string">'&#123;"action":"long2short","long_url":"'</span> + long_url + <span class="string">'"&#125;'</span></span><br><span class="line">    shortUrl = <span class="string">'https://api.weixin.qq.com/cgi-bin/shorturl?access_token='</span> + token</span><br><span class="line">    f = urllib2.urlopen(url = shortUrl, data = data)</span><br><span class="line">    stringJson = f.read()</span><br><span class="line">    url = json.loads(stringJson)[<span class="string">'short_url'</span>]</span><br><span class="line">    <span class="keyword">return</span> url</span><br></pre></td></tr></table></figure>
+<h1 id="getShort-py">getShort.py</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding:utf-8</span></span><br><span class="line"><span class="keyword">from</span> getWxMsg <span class="keyword">import</span> getToken</span><br><span class="line"><span class="keyword">from</span> getWxMsg <span class="keyword">import</span> long2short</span><br><span class="line"><span class="comment"># 获取token</span></span><br><span class="line"><span class="comment"># appid = 'wx1c90df2cce19a9a4'</span></span><br><span class="line"><span class="comment"># secret = '974a308e03d756ac2b6cc9a9699e6d4d'</span></span><br><span class="line"><span class="comment"># token = getToken(appid, secret)</span></span><br><span class="line"><span class="comment"># print token</span></span><br><span class="line">token = <span class="string">'XlyRmukki_OdSazRTYInnbuDhKYQUdNkxas8HDqKXZcrE5Hgy51vk2JFLdTUxofF6goTJJyCFgECxt3lwWewyirSqGNPqXUgtGoJP_JLiZ8'</span></span><br><span class="line">shorUrl = <span class="string">'http://pycodelife.sinaapp.com/10/'</span></span><br><span class="line"><span class="keyword">print</span> long2short(shorUrl, token)</span><br></pre></td></tr></table></figure>
             
-            
-              
-                <a class="post-title-link" href="/2015/10/28/pythonsupervisor/" itemprop="url">
-                  python supervisor
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2015-10-28T13:19:33+08:00" content="2015-10-28">
-              2015-10-28
-            </time>
           </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/10/28/pythonsupervisor/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/pythonsupervisor/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h1 id="简介">简介</h1><blockquote>
-<ul>
-<li>supervisor 是由python语言编写、基于linux操作系统的一款服务器管理工具，用以监控服务器的运行，发现问题能立即自动预警及自动重启等功能。</li>
-</ul>
-</blockquote>
-<h1 id="1-添加程序">1.添加程序</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#在/etc/supervisor/conf.d目录下新建xxx.conf，supervisor将自动加入到运行列表</span></span><br><span class="line">sudo vi app.conf</span><br><span class="line">[program:app]</span><br><span class="line">command = python /home/dong/public/app.py</span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>每次更新完配置文件后都要更新控制台</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo supervisorctl update</span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>或者进入控制台后重新加载配置文件</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reload</span><br></pre></td></tr></table></figure>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/28/pythonsupervisor/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
         
       
     </div>
@@ -746,7 +826,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -787,21 +867,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">32</span>
+              <span class="site-state-item-count">44</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">21</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>

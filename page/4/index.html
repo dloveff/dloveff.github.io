@@ -217,8 +217,8 @@
             
             
               
-                <a class="post-title-link" href="/2015/10/28/django学习笔记七（admin后台管理）/" itemprop="url">
-                  django学习笔记七（admin后台管理）
+                <a class="post-title-link" href="/2015/10/28/pythonQueue模块/" itemprop="url">
+                  python Queue模块
                 </a>
               
             
@@ -228,7 +228,7 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-10-28T00:01:16+08:00" content="2015-10-28">
+            <time itemprop="dateCreated" datetime="2015-10-28T13:28:07+08:00" content="2015-10-28">
               2015-10-28
             </time>
           </span>
@@ -254,8 +254,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/10/28/django学习笔记七（admin后台管理）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/django学习笔记七（admin后台管理）/" itemprop="commentsCount"></span>
+                <a href="/2015/10/28/pythonQueue模块/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/pythonQueue模块/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -275,115 +275,28 @@
 
       
         
-          <span itemprop="articleBody">
-            
-              <h1 id="1-创建一个新工程和app">1.创建一个新工程和app</h1><h1 id="2-修改setting-py">2.修改setting.py</h1><blockquote>
+          <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Queue</span><br><span class="line">myqueue = Queue.Queue(maxsize = <span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
 <ul>
-<li>增加app名</li>
+<li>Queue.Queue类即是一个队列的同步实现。队列长度可为无限或者有限。可通过Queue的构造函数的可选参数maxsize来设定队列长度。如果maxsize小于1就表示队列长度无限。</li>
+<li>将一个值放入队列中</li>
 </ul>
 </blockquote>
-<h1 id="3-修改blog/models-py">3.修改blog/models.py</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line">sex_choices=(</span><br><span class="line">    (<span class="string">'f'</span>, <span class="string">'famale'</span>),</span><br><span class="line">    (<span class="string">'m'</span>, <span class="string">'male'</span>),</span><br><span class="line">)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    name = models.CharField(max_length=<span class="number">30</span>)</span><br><span class="line">    sex = models.CharField(max_length=<span class="number">1</span>, choices=sex_choices)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__unicode__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.name</span><br></pre></td></tr></table></figure>
-<h1 id="4-修改blog/admin-py">4.修改blog/admin.py</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"><span class="keyword">from</span> blog.models <span class="keyword">import</span> User</span><br><span class="line">admin.site.register(User)</span><br></pre></td></tr></table></figure>
-<h1 id="手动查看sqlite3数据库">手动查看sqlite3数据库</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install sqlite3</span><br><span class="line">sqlite3 db.sqlite3    //sqlite3 数据库名</span><br><span class="line">.tables    //查看表</span><br><span class="line">select * <span class="keyword">from</span> blog_user;     //查看数据库</span><br><span class="line">.exit       //退出</span><br></pre></td></tr></table></figure>
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                <a class="post-title-link" href="/2015/10/27/django学习笔记六/" itemprop="url">
-                  django学习笔记六
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2015-10-27T23:45:38+08:00" content="2015-10-27">
-              2015-10-27
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/10/27/django学习笔记六/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/27/django学习笔记六/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h1 id="安装ipython">安装ipython</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install ipython</span><br></pre></td></tr></table></figure>
-<h1 id="创建记录方法一：">创建记录方法一：</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">python manage.py shell</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> blog.models <span class="keyword">import</span> Employee</span><br><span class="line">Employee</span><br><span class="line">emp = Employee()</span><br><span class="line">emp.name = <span class="string">'dong'</span></span><br><span class="line">emp.save()</span><br></pre></td></tr></table></figure>
-<h1 id="查看数据库">查看数据库</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">mysql -uroot -p</span><br><span class="line">use mysite;</span><br><span class="line">select * <span class="keyword">from</span> blog_employee;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myqueue.put(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>调用队列对象的put()方法在队尾插入一个项目。put()有两个参数，第一个item为必需的，为插入项目的值；第二个block为可选参数，默认为1。如果队列当前为空且block为1，put()方法就使调用线程暂停,直到空出一个数据单元。如果block为0，put方法将引发Full异常。</li>
+<li>将一个值从队列中取出</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myqueue.get()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>调用队列对象的get()方法从队头删除并返回一个项目。可选参数为block，默认为True。如果队列为空且block为True，get()就使调用线程暂停，直至有项目可用。如果队列为空且block为False，队列将引发Empty异常。</li>
+</ul>
+</blockquote>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/27/django学习笔记六/#more" rel="contents">
+            <a class="btn" href="/2015/10/28/pythonQueue模块/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -421,8 +334,8 @@
             
             
               
-                <a class="post-title-link" href="/2015/10/27/django学习笔记五/" itemprop="url">
-                  django学习笔记五
+                <a class="post-title-link" href="/2015/10/28/pythonsupervisor/" itemprop="url">
+                  python supervisor
                 </a>
               
             
@@ -432,8 +345,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-10-27T23:37:35+08:00" content="2015-10-27">
-              2015-10-27
+            <time itemprop="dateCreated" datetime="2015-10-28T13:19:33+08:00" content="2015-10-28">
+              2015-10-28
             </time>
           </span>
 
@@ -458,8 +371,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/10/27/django学习笔记五/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/27/django学习笔记五/" itemprop="commentsCount"></span>
+                <a href="/2015/10/28/pythonsupervisor/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/pythonsupervisor/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -479,16 +392,26 @@
 
       
         
-          <blockquote>
+          <h1 id="简介">简介</h1><blockquote>
 <ul>
-<li>注意：要启动数据库</li>
+<li>supervisor 是由python语言编写、基于linux操作系统的一款服务器管理工具，用以监控服务器的运行，发现问题能立即自动预警及自动重启等功能。</li>
 </ul>
 </blockquote>
-<h1 id="1-创建数据库">1.创建数据库</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br><span class="line">create database mysite default charset = utf8;</span><br></pre></td></tr></table></figure>
-<h1 id="2-修改数据库类型">2.修改数据库类型</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mysite/settings.py</span><br><span class="line">DATABASES = &#123;</span><br><span class="line">    <span class="string">'default'</span>: &#123;</span><br><span class="line">        <span class="string">'ENGINE'</span>: <span class="string">'django.db.backends.mysql'</span>,    //设置数据库类型</span><br><span class="line">        <span class="string">'NAME'</span>: <span class="string">'mysite'</span>,    //名称是上面创建的名称</span><br><span class="line">        <span class="string">'USER'</span>: <span class="string">'root'</span>,        //用户名是数据库的用户名</span><br><span class="line">        <span class="string">'PASSWORD'</span>: <span class="string">'dong'</span>,    //密码是数据库密码</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="3-修改blog/models-py_(创建数据库对象)">3.修改blog/models.py (创建数据库对象)</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Employee</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">     name = models.CharField(max_length = <span class="number">50</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="1-添加程序">1.添加程序</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#在/etc/supervisor/conf.d目录下新建xxx.conf，supervisor将自动加入到运行列表</span></span><br><span class="line">sudo vi app.conf</span><br><span class="line">[program:app]</span><br><span class="line">command = python /home/dong/public/app.py</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>每次更新完配置文件后都要更新控制台</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo supervisorctl update</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>或者进入控制台后重新加载配置文件</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reload</span><br></pre></td></tr></table></figure>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/27/django学习笔记五/#more" rel="contents">
+            <a class="btn" href="/2015/10/28/pythonsupervisor/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -526,8 +449,8 @@
             
             
               
-                <a class="post-title-link" href="/2015/10/27/django学习笔记四（模板标签）/" itemprop="url">
-                  django学习笔记四（模板标签）
+                <a class="post-title-link" href="/2015/10/28/pythonvirtualenv/" itemprop="url">
+                  python virtualenv
                 </a>
               
             
@@ -537,8 +460,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-10-27T23:35:45+08:00" content="2015-10-27">
-              2015-10-27
+            <time itemprop="dateCreated" datetime="2015-10-28T13:12:36+08:00" content="2015-10-28">
+              2015-10-28
             </time>
           </span>
 
@@ -563,8 +486,128 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/10/27/django学习笔记四（模板标签）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/27/django学习笔记四（模板标签）/" itemprop="commentsCount"></span>
+                <a href="/2015/10/28/pythonvirtualenv/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/pythonvirtualenv/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h1 id="简介">简介</h1><blockquote>
+<ul>
+<li>virtualenv用于创建独立的Python环境，多个Python相互独立，互不影响，它能够：</li>
+<li>1.在没有权限的情况下安装新套件</li>
+<li>2.不同应用可以使用不同的套件版本</li>
+<li>3.套件升级不影响其他应用</li>
+</ul>
+</blockquote>
+<h1 id="1-安装">1.安装</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install virtualenv</span><br></pre></td></tr></table></figure>
+<h1 id="2-创建虚拟环境">2.创建虚拟环境</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">virtualenv venv</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>venv 是一个自定义名称，随便写</li>
+<li>如果不想依赖这些package，那么可以加上参数 </li>
+<li>–no-site-packages　</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">virtualenv venv --no-site-packages</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>创建成功后，会在当前目录下生成对应的目录文件。</li>
+</ul>
+</blockquote>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/10/28/pythonvirtualenv/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                <a class="post-title-link" href="/2015/10/28/pycharm设置git/" itemprop="url">
+                  pycharm 设置git
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-10-28T13:09:27+08:00" content="2015-10-28">
+              2015-10-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/10/28/pycharm设置git/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/pycharm设置git/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -586,7 +629,35 @@
         
           <span itemprop="articleBody">
             
-              <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;%if user%&#125;</span><br><span class="line"><span class="tag">&lt;<span class="title">li</span>&gt;</span>name:&#123;&#123;user.name&#125;&#125;<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">&#123;%else%&#125;</span><br><span class="line"><span class="tag">&lt;<span class="title">li</span>&gt;</span>not name:&#123;&#123;user.name&#125;&#125;<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">&#123;%endif%&#125;</span><br><span class="line">&#123;%for book in book_list%&#125;</span><br><span class="line"><span class="tag">&lt;<span class="title">li</span>&gt;</span>&#123;&#123;book&#125;&#125;<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">&#123;%endfor%&#125;</span><br><span class="line">&#123;%for k in user%&#125;</span><br><span class="line"><span class="tag">&lt;<span class="title">li</span>&gt;</span>&#123;&#123;k&#125;&#125;<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">&#123;%endfor%&#125;</span><br><span class="line">&#123;%for kk,v in user.items%&#125;</span><br><span class="line"><span class="tag">&lt;<span class="title">li</span>&gt;</span>&#123;&#123;kk&#125;&#125;:&#123;&#123;v&#125;&#125;<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">&#123;%endfor%&#125;</span><br><span class="line">&#123;%for kk,v in user.items%&#125;</span><br><span class="line"><span class="tag">&lt;<span class="title">li</span>&gt;</span>&#123;&#123;forloop.counter&#125;&#125;.&#123;&#123;kk&#125;&#125;:&#123;&#123;v&#125;&#125;<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">&#123;%endfor%&#125;</span><br></pre></td></tr></table></figure>
+              <h1 id="1-配置git">1.配置git</h1><blockquote>
+<ul>
+<li>打开file，选择settings，找到Version Contorl，打开</li>
+<li>找到GitHub ，HOST填github.com，用户名，密码，test，稍等一会，会提示成功</li>
+<li>设置好后选择git，这里是输入你的git.exe的,下面是我的git.exe的位置：</li>
+<li>E:\Program Files (x86)\Git\bin\git.exe</li>
+</ul>
+</blockquote>
+<h1 id="2-clone代码">2.clone代码</h1><blockquote>
+<ul>
+<li>设置好以后</li>
+<li>在主界面中打开VCS菜单</li>
+<li>找到checkout from version control</li>
+<li>点击GitHub</li>
+<li>打开以后就可以发现有三个输入框</li>
+<li>第一个是你在GitHub上创建的项目文件夹（我的是myflask）</li>
+<li>第二个是你想要放置myflask的位置（也就是myflask会下载到这个地方）</li>
+<li>第三个是文件夹名称</li>
+<li>点击Clone,用过GitHub的肯定知道，这个就是把你在GIT上创建的项目文件夹同步到本地</li>
+<li>稍等一会儿，你会发现你的PyCharm的项目栏中多了一个文件夹，我的是myflask</li>
+</ul>
+</blockquote>
+<h1 id="3-提交代码">3.提交代码</h1><blockquote>
+<ul>
+<li>a.选中项目名称–右键–git–commit…–</li>
+<li>b.选中项目名称–右键–git–repository–push</li>
+</ul>
+</blockquote>
+
             
           </span>
         
@@ -623,8 +694,8 @@
             
             
               
-                <a class="post-title-link" href="/2015/10/27/django学习笔记三（模板变量）/" itemprop="url">
-                  django学习笔记三（模板变量）
+                <a class="post-title-link" href="/2015/10/28/pycharmpyqt环境配置/" itemprop="url">
+                  pycharm pyqt环境配置
                 </a>
               
             
@@ -634,8 +705,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-10-27T23:27:09+08:00" content="2015-10-27">
-              2015-10-27
+            <time itemprop="dateCreated" datetime="2015-10-28T13:01:10+08:00" content="2015-10-28">
+              2015-10-28
             </time>
           </span>
 
@@ -644,8 +715,8 @@
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/PyQt/" itemprop="url" rel="index">
+                    <span itemprop="name">PyQt</span>
                   </a>
                 </span>
 
@@ -660,8 +731,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/10/27/django学习笔记三（模板变量）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/27/django学习笔记三（模板变量）/" itemprop="commentsCount"></span>
+                <a href="/2015/10/28/pycharmpyqt环境配置/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/pycharmpyqt环境配置/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -681,16 +752,18 @@
 
       
         
-          <h1 id="方法一：(基本数据类型)">方法一：(基本数据类型)</h1><blockquote>
+          <h1 id="软件版本：">软件版本：</h1><blockquote>
 <ul>
-<li>1.修改blog/templates/index.html</li>
+<li>win7 64位</li>
+<li>pycharm 4.5.3</li>
+<li>python 2.7.9</li>
+<li>pyqt 4.8.7</li>
 </ul>
 </blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">title</span>&gt;</span>&#123;&#123;title&#125;&#125;<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">h1</span>&gt;</span>hello &#123;&#123;user&#125;&#125;<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="2-修改blog/views-py">2.修改blog/views.py</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">return render_to_response('index.html', &#123;'title':'my page','user':'dong'&#125;)</span><br><span class="line">#title和user要对应index.html中的titles和user</span><br></pre></td></tr></table></figure>
-<h1 id="方法二：(字典)">方法二：(字典)</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">h1</span>&gt;</span>hello &#123;&#123;user.name&#125;&#125; &#123;&#123;user.age&#125;&#125; &#123;&#123;user.sex&#125;&#125;<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line">user = &#123;'name':'dong', 'age':23, 'sex':'male'&#125;</span><br><span class="line">return render_to_response('index.html', &#123;'title':'my page','user':user&#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="1-_设置Qt_Designer">1. 设置Qt Designer</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">File--settings(Ctrl+Alt+s)--Tools--External Tools--点击左上角加号+</span><br></pre></td></tr></table></figure>
+<p><img src="http://7xkw0s.com1.z0.glb.clouddn.com/pycharmpyqt环境配置1.png" alt="http://7xkw0s.com1.z0.glb.clouddn.com/pycharmpyqt环境配置1.png"></p>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/27/django学习笔记三（模板变量）/#more" rel="contents">
+            <a class="btn" href="/2015/10/28/pycharmpyqt环境配置/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -716,7 +789,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -757,21 +830,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">32</span>
+              <span class="site-state-item-count">44</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">21</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>

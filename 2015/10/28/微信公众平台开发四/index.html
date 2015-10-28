@@ -1,0 +1,812 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+    <link href='//fonts.lug.ustc.edu.cn/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+
+  <meta name="description" content="个人博客" />
+
+
+
+
+  <meta name="keywords" content="微信," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="微信 菜单创建，查询，删除
+创建:
+
+请注意：
+1、自定义菜单最多包括3个一级菜单，每个一级菜单最多包含5个二级菜单。
+2、一级菜单最多4个汉字，二级菜单最多7个汉字，多出来的部分将会以“…”代替。
+3、创建自定义菜单后，由于微信客户端缓存，需要24小时微信客户端才会展现出来。测试时可以尝试取消关注公众账号后再次关注，则可以看到创建后的效果。
+
+
+自定义菜单接口可实现多种类型按钮，如下：
+
+1、c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信公众平台开发四">
+<meta property="og:url" content="http://codelife.top/2015/10/28/微信公众平台开发四/index.html">
+<meta property="og:site_name" content="Dong's Blog">
+<meta property="og:description" content="微信 菜单创建，查询，删除
+创建:
+
+请注意：
+1、自定义菜单最多包括3个一级菜单，每个一级菜单最多包含5个二级菜单。
+2、一级菜单最多4个汉字，二级菜单最多7个汉字，多出来的部分将会以“…”代替。
+3、创建自定义菜单后，由于微信客户端缓存，需要24小时微信客户端才会展现出来。测试时可以尝试取消关注公众账号后再次关注，则可以看到创建后的效果。
+
+
+自定义菜单接口可实现多种类型按钮，如下：
+
+1、c">
+<meta property="og:updated_time" content="2015-10-28T14:34:30.665Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="微信公众平台开发四">
+<meta name="twitter:description" content="微信 菜单创建，查询，删除
+创建:
+
+请注意：
+1、自定义菜单最多包括3个一级菜单，每个一级菜单最多包含5个二级菜单。
+2、一级菜单最多4个汉字，二级菜单最多7个汉字，多出来的部分将会以“…”代替。
+3、创建自定义菜单后，由于微信客户端缓存，需要24小时微信客户端才会展现出来。测试时可以尝试取消关注公众账号后再次关注，则可以看到创建后的效果。
+
+
+自定义菜单接口可实现多种类型按钮，如下：
+
+1、c">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: '',
+    sidebar: 'hide',
+    motion: true
+  };
+</script>
+
+  <title> 微信公众平台开发四 | Dong's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Dong's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">DongBlog</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                微信公众平台开发四
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-10-28T22:14:55+08:00" content="2015-10-28">
+              2015-10-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/10/28/微信公众平台开发四/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/微信公众平台开发四/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><h1 id="微信_菜单创建，查询，删除">微信 菜单创建，查询，删除</h1><hr>
+<h1 id="创建:">创建:</h1><blockquote>
+<ul>
+<li>请注意：</li>
+<li>1、自定义菜单最多包括3个一级菜单，每个一级菜单最多包含5个二级菜单。</li>
+<li>2、一级菜单最多4个汉字，二级菜单最多7个汉字，多出来的部分将会以“…”代替。</li>
+<li>3、创建自定义菜单后，由于微信客户端缓存，需要24小时微信客户端才会展现出来。测试时可以尝试取消关注公众账号后再次关注，则可以看到创建后的效果。</li>
+</ul>
+</blockquote>
+<h1 id="自定义菜单接口可实现多种类型按钮，如下：">自定义菜单接口可实现多种类型按钮，如下：</h1><blockquote>
+<ul>
+<li>1、click：点击推事件</li>
+<li>用户点击click类型按钮后，微信服务器会通过消息接口推送消息类型为event 的结构给开发者（参考消息接口指南），并且带上按钮中开发者填写的key值，开发者可以通过自定义的key值与用户进行交互；</li>
+<li>2、view：跳转URL</li>
+<li>用户点击view类型按钮后，微信客户端将会打开开发者在按钮中填写的网页URL，可与网页授权获取用户基本信息接口结合，获得用户基本信息。</li>
+<li>3、scancode_push：扫码推事件</li>
+<li>用户点击按钮后，微信客户端将调起扫一扫工具，完成扫码操作后显示扫描结果（如果是URL，将进入URL），且会将扫码的结果传给开发者，开发者可以下发消息。</li>
+<li>4、scancode_waitmsg：扫码推事件且弹出“消息接收中”提示框</li>
+<li>用户点击按钮后，微信客户端将调起扫一扫工具，完成扫码操作后，将扫码的结果传给开发者，同时收起扫一扫工具，然后弹出“消息接收中”提示框，随后可能会收到开发者下发的消息。</li>
+<li>5、pic_sysphoto：弹出系统拍照发图</li>
+<li>用户点击按钮后，微信客户端将调起系统相机，完成拍照操作后，会将拍摄的相片发送给开发者，并推送事件给开发者，同时收起系统相机，随后可能会收到开发者下发的消息。</li>
+<li>6、pic_photo_or_album：弹出拍照或者相册发图</li>
+<li>用户点击按钮后，微信客户端将弹出选择器供用户选择“拍照”或者“从手机相册选择”。用户选择后即走其他两种流程。</li>
+<li>7、pic_weixin：弹出微信相册发图器</li>
+<li>用户点击按钮后，微信客户端将调起微信相册，完成选择操作后，将选择的相片发送给开发者的服务器，并推送事件给开发者，同时收起相册，随后可能会收到开发者下发的消息。</li>
+<li>8、location_select：弹出地理位置选择器</li>
+<li>用户点击按钮后，微信客户端将调起地理位置选择工具，完成选择操作后，将选择的地理位置发送给开发者的服务器，同时收起位置选择工具，随后可能会收到开发者下发的消息。</li>
+<li>9、media_id：下发消息（除文本消息）</li>
+<li>用户点击media_id类型按钮后，微信服务器会将开发者填写的永久素材id对应的素材下发给用户，永久素材类型可以是图片、音频、视频、图文消息。请注意：永久素材id必须是在“素材管理/新增永久素材”接口上传后获得的合法id。</li>
+<li>10、view_limited：跳转图文消息URL</li>
+<li>用户点击view_limited类型按钮后，微信客户端将打开开发者在按钮中填写的永久素材id对应的图文消息URL，永久素材类型只支持图文消息。请注意：永久素材id必须是在“素材管理/新增永久素材”接口上传后获得的合法id。</li>
+<li>请注意，3到8的所有事件，仅支持微信iPhone5.4.1以上版本，和Android5.4以上版本的微信用户，旧版本微信用户点击后将没有回应，开发者也不能正常接收到事件推送。9和10，是专门给第三方平台旗下未微信认证（具体而言，是资质认证未通过）的订阅号准备的事件类型，它们是没有事件推送的，能力相对受限，其他类型的公众号不必使用。</li>
+</ul>
+</blockquote>
+<a id="more"></a>
+<h1 id="接口调用请求说明">接口调用请求说明</h1><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http请求方式：POST（请使用https协议）</span><br><span class="line">https://api.weixin.qq.com/cgi-bin/menu/create?access_token=ACCESS_TOKEN</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- encoding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> urllib</span><br><span class="line"><span class="keyword">import</span> urllib2</span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> urlencode</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">reload(sys)</span><br><span class="line">sys.setdefaultencoding(<span class="string">'UTF-8'</span>)</span><br><span class="line">appid = <span class="string">'wx1c90df2cce19a9a4'</span></span><br><span class="line">secret = <span class="string">'974a308e03d756ac2b6cc9a9699e6d4d'</span></span><br><span class="line">gettoken = <span class="string">'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid='</span> + appid + <span class="string">'&amp;secret='</span> + secret</span><br><span class="line">f = urllib2.urlopen( gettoken )</span><br><span class="line">stringjson = f.read()</span><br><span class="line">access_token = json.loads(stringjson)[<span class="string">'access_token'</span>]</span><br><span class="line"><span class="keyword">print</span> access_token</span><br><span class="line"><span class="comment"># 创建菜单</span></span><br><span class="line">posturl = <span class="string">"https://api.weixin.qq.com/cgi-bin/menu/create?access_token="</span> + access_token</span><br><span class="line"><span class="comment"># 查询菜单</span></span><br><span class="line">getMenu = <span class="string">"https://api.weixin.qq.com/cgi-bin/menu/get?access_token="</span> + access_token</span><br><span class="line"><span class="comment"># 删除菜单</span></span><br><span class="line">deleteMenu = <span class="string">"https://api.weixin.qq.com/cgi-bin/menu/delete?access_token="</span> + access_token</span><br><span class="line">menu = <span class="string">'''&#123;</span><br><span class="line">    "button": [</span><br><span class="line">        &#123;</span><br><span class="line">            "name": "账户", </span><br><span class="line">            "sub_button": [</span><br><span class="line">                &#123;</span><br><span class="line">                    "type": "click", </span><br><span class="line">                    "name": "绑定账户", </span><br><span class="line">                    "key": "binding"</span><br><span class="line">                &#125;, </span><br><span class="line">                &#123;</span><br><span class="line">                    "type": "click", </span><br><span class="line">                    "name": "解除绑定", </span><br><span class="line">                    "key": "unlock"</span><br><span class="line">                &#125;</span><br><span class="line">            ]</span><br><span class="line">        &#125;, </span><br><span class="line">        &#123;</span><br><span class="line">            "name": "校园大杂烩", </span><br><span class="line">            "sub_button": [</span><br><span class="line">                &#123;</span><br><span class="line">                    "type": "click", </span><br><span class="line">                    "name": "近期成绩", </span><br><span class="line">                    "key": "grade"</span><br><span class="line">                &#125;</span><br><span class="line">            ]</span><br><span class="line">        &#125;, </span><br><span class="line">        &#123;</span><br><span class="line">            "name": "大杂烩②", </span><br><span class="line">            "sub_button": [</span><br><span class="line">                &#123;</span><br><span class="line">                    "type": "click", </span><br><span class="line">                    "name": "使用手册", </span><br><span class="line">                    "key": "userguide"</span><br><span class="line">                &#125;</span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;'''</span></span><br><span class="line"><span class="comment"># request = urllib2.urlopen(posturl, menu.encode('utf-8'))</span></span><br><span class="line">request = urllib2.urlopen(getMenu)</span><br><span class="line"><span class="comment"># request = urllib2.urlopen(deleteMenu)</span></span><br><span class="line"><span class="keyword">print</span> request.read()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>参数  是否必须    说明</li>
+<li>button  是   一级菜单数组，个数应为1~3个</li>
+<li>sub_button  否   二级菜单数组，个数应为1~5个</li>
+<li>type    是   菜单的响应动作类型</li>
+<li>name    是   菜单标题，不超过16个字节，子菜单不超过40个字节</li>
+<li>key click等点击类型必须    菜单KEY值，用于消息接口推送，不超过128字节</li>
+<li>url view类型必须    网页链接，用户点击菜单可打开链接，不超过256字节</li>
+<li>media_id    media_id类型和view_limited类型必须 调用新增永久素材接口返回的合法media_id<br>返回结果</li>
+</ul>
+</blockquote>
+<h1 id="正确时的返回JSON数据包如下：">正确时的返回JSON数据包如下：</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"errcode"</span>:<span class="number">0</span>,<span class="string">"errmsg"</span>:<span class="string">"ok"</span>&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="错误时的返回JSON数据包如下（示例为无效菜单名长度）：">错误时的返回JSON数据包如下（示例为无效菜单名长度）：</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"errcode"</span>:<span class="number">40018</span>,<span class="string">"errmsg"</span>:<span class="string">"invalid button name size"</span>&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="查询">查询</h1><blockquote>
+<ul>
+<li>使用接口创建自定义菜单后，开发者还可使用接口查询自定义菜单的结构。</li>
+</ul>
+</blockquote>
+<h1 id="请求说明">请求说明</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http请求方式：GET</span><br><span class="line">https://api.weixin.qq.com/cgi-bin/menu/get?access_token=ACCESS_TOKEN</span><br></pre></td></tr></table></figure>
+<h1 id="返回说明">返回说明</h1><blockquote>
+<ul>
+<li>对应创建接口，正确的Json返回结果:</li>
+</ul>
+</blockquote>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;"<span class="attribute">menu</span>":<span class="value">&#123;"<span class="attribute">button</span>":<span class="value">[&#123;"<span class="attribute">type</span>":<span class="value"><span class="string">"click"</span></span>,"<span class="attribute">name</span>":<span class="value"><span class="string">"今日歌曲"</span></span>,"<span class="attribute">key</span>":<span class="value"><span class="string">"V1001_TODAY_MUSIC"</span></span>,"<span class="attribute">sub_button</span>":<span class="value">[]</span>&#125;,&#123;"<span class="attribute">type</span>":<span class="value"><span class="string">"click"</span></span>,"<span class="attribute">name</span>":<span class="value"><span class="string">"歌手简介"</span></span>,"<span class="attribute">key</span>":<span class="value"><span class="string">"V1001_TODAY_SINGER"</span></span>,"<span class="attribute">sub_button</span>":<span class="value">[]</span>&#125;,&#123;"<span class="attribute">name</span>":<span class="value"><span class="string">"菜单"</span></span>,"<span class="attribute">sub_button</span>":<span class="value">[&#123;"<span class="attribute">type</span>":<span class="value"><span class="string">"view"</span></span>,"<span class="attribute">name</span>":<span class="value"><span class="string">"搜索"</span></span>,"<span class="attribute">url</span>":<span class="value"><span class="string">"http://www.soso.com/"</span></span>,"<span class="attribute">sub_button</span>":<span class="value">[]</span>&#125;,&#123;"<span class="attribute">type</span>":<span class="value"><span class="string">"view"</span></span>,"<span class="attribute">name</span>":<span class="value"><span class="string">"视频"</span></span>,"<span class="attribute">url</span>":<span class="value"><span class="string">"http://v.qq.com/"</span></span>,"<span class="attribute">sub_button</span>":<span class="value">[]</span>&#125;,&#123;"<span class="attribute">type</span>":<span class="value"><span class="string">"click"</span></span>,"<span class="attribute">name</span>":<span class="value"><span class="string">"赞一下我们"</span></span>,"<span class="attribute">key</span>":<span class="value"><span class="string">"V1001_GOOD"</span></span>,"<span class="attribute">sub_button</span>":<span class="value">[]</span>&#125;]</span>&#125;]</span>&#125;</span>&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="删除">删除</h1><blockquote>
+<ul>
+<li>使用接口创建自定义菜单后，开发者还可使用接口删除当前使用的自定义菜单。</li>
+</ul>
+</blockquote>
+<h1 id="请求说明-1">请求说明</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http请求方式：GET</span><br><span class="line">https://api.weixin.qq.com/cgi-bin/menu/delete?access_token=ACCESS_TOKEN</span><br></pre></td></tr></table></figure>
+<h1 id="返回说明-1">返回说明</h1><blockquote>
+<ul>
+<li>对应创建接口，正确的Json返回结果:</li>
+</ul>
+</blockquote>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;"<span class="attribute">errcode</span>":<span class="value"><span class="number">0</span></span>,"<span class="attribute">errmsg</span>":<span class="value"><span class="string">"ok"</span></span>&#125;</span><br></pre></td></tr></table></figure></span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/微信/" rel="tag">#微信</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/10/28/微信公众平台开发三/" rel="next" title="微信公众平台开发三">
+                <i class="fa fa-chevron-left"></i> 微信公众平台开发三
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/10/28/微信公众平台开发五/" rel="prev" title="微信公众平台开发五">
+                微信公众平台开发五 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2015/10/28/微信公众平台开发四/"
+     data-title="微信公众平台开发四"
+     data-content=""
+     data-url="http://codelife.top/2015/10/28/微信公众平台开发四/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/10/28/微信公众平台开发四/"
+           data-title="微信公众平台开发四" data-url="http://codelife.top/2015/10/28/微信公众平台开发四/">
+      </div>
+    
+  </div>
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="http://www.lagou.com/image1/M00/05/59/Cgo8PFTUd9CAd7LgAAKgwOHqUag402.PNG" alt="dong" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">dong</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">个人博客</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">44</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://git.oschina.net/dloveff" target="_blank">
+                  <i class="fa fa-github fa-fw"></i> GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#微信_菜单创建，查询，删除"><span class="nav-number">1.</span> <span class="nav-text">微信 菜单创建，查询，删除</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建:"><span class="nav-number">2.</span> <span class="nav-text">创建:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自定义菜单接口可实现多种类型按钮，如下："><span class="nav-number">3.</span> <span class="nav-text">自定义菜单接口可实现多种类型按钮，如下：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接口调用请求说明"><span class="nav-number">4.</span> <span class="nav-text">接口调用请求说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正确时的返回JSON数据包如下："><span class="nav-number">5.</span> <span class="nav-text">正确时的返回JSON数据包如下：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#错误时的返回JSON数据包如下（示例为无效菜单名长度）："><span class="nav-number">6.</span> <span class="nav-text">错误时的返回JSON数据包如下（示例为无效菜单名长度）：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查询"><span class="nav-number">7.</span> <span class="nav-text">查询</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#请求说明"><span class="nav-number">8.</span> <span class="nav-text">请求说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#返回说明"><span class="nav-number">9.</span> <span class="nav-text">返回说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#删除"><span class="nav-number">10.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#请求说明-1"><span class="nav-number">11.</span> <span class="nav-text">请求说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#返回说明-1"><span class="nav-number">12.</span> <span class="nav-text">返回说明</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">dong</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"codelife"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+    
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+
+  
+  
+
+</body>
+</html>

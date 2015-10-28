@@ -217,8 +217,8 @@
             
             
               
-                <a class="post-title-link" href="/2015/10/27/django学习笔记二（模板）/" itemprop="url">
-                  django学习笔记二（模板）
+                <a class="post-title-link" href="/2015/10/28/PyQtTcpClient/" itemprop="url">
+                  PyQt Tcp Client
                 </a>
               
             
@@ -228,8 +228,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-10-27T23:19:44+08:00" content="2015-10-27">
-              2015-10-27
+            <time itemprop="dateCreated" datetime="2015-10-28T12:53:03+08:00" content="2015-10-28">
+              2015-10-28
             </time>
           </span>
 
@@ -238,8 +238,8 @@
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/PyQt/" itemprop="url" rel="index">
+                    <span itemprop="name">PyQt</span>
                   </a>
                 </span>
 
@@ -254,8 +254,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/10/27/django学习笔记二（模板）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/27/django学习笔记二（模板）/" itemprop="commentsCount"></span>
+                <a href="/2015/10/28/PyQtTcpClient/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/PyQtTcpClient/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -275,15 +275,9 @@
 
       
         
-          <h1 id="1-创建模板">1.创建模板</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir blog/templates</span><br><span class="line">vi index.html</span><br></pre></td></tr></table></figure>
-<h1 id="方法一：">方法一：</h1><blockquote>
-<ul>
-<li>创建模板对象</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">blog/views.py</span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</span><br><span class="line"><span class="keyword">from</span> django.template <span class="keyword">import</span> loader,Context</span><br><span class="line"><span class="comment">#创建loader对象，加载对应文件</span></span><br><span class="line">t = loader.get_template(<span class="string">'index.html'</span>)</span><br><span class="line"><span class="comment">#创建Context对象,存放模板的数据</span></span><br><span class="line">c = Context(&#123;&#125;)</span><br><span class="line"><span class="comment">#响应对应的内容</span></span><br><span class="line"><span class="keyword">return</span> HttpResponse(t.render(c))</span><br><span class="line"><span class="comment"># 完整代码</span></span><br><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render</span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</span><br><span class="line"><span class="keyword">from</span> django.template <span class="keyword">import</span> loader,Context</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(req)</span>:</span></span><br><span class="line">    t = loader.get_template(<span class="string">'index.html'</span>)</span><br><span class="line">    c = Context(&#123;&#125;)</span><br><span class="line">    <span class="keyword">return</span> HttpResponse(t.render(c))</span><br></pre></td></tr></table></figure>
+          <h1 id="code-py">code.py</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding:utf-8</span></span><br><span class="line">__author__ = <span class="string">'dong'</span></span><br><span class="line"><span class="comment">#tcp client</span></span><br><span class="line"><span class="comment">#不支持中文</span></span><br><span class="line"><span class="comment">#2015.9.24</span></span><br><span class="line"><span class="keyword">from</span> PyQt4.QtGui <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> PyQt4.QtCore <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> myui <span class="keyword">import</span> Ui_Form</span><br><span class="line"><span class="keyword">from</span> PyQt4.QtNetwork <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">mainUi</span><span class="params">(QWidget, Ui_Form)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, parent=None)</span>:</span></span><br><span class="line">        QWidget.__init__(self, parent)</span><br><span class="line">        self.setupUi(self)</span><br><span class="line">        self.socket = QTcpSocket()</span><br><span class="line">        <span class="comment"># 以下是信号</span></span><br><span class="line">        self.connect(self.pushButton_connect, SIGNAL(<span class="string">'clicked()'</span>), self.connectSlot)    <span class="comment"># 连接</span></span><br><span class="line">        self.connect(self.pushButton_clear, SIGNAL(<span class="string">'clicked()'</span>), self.clearSlot)        <span class="comment"># 清空</span></span><br><span class="line">        self.connect(self.pushButton_send, SIGNAL(<span class="string">'clicked()'</span>), self.sendSlot)          <span class="comment"># 发送</span></span><br><span class="line">        self.socket.readyRead.connect(self.readFromServer)</span><br><span class="line">        self.socket.disconnected.connect(self.serverStopped)</span><br><span class="line">        self.connect(self.socket, SIGNAL(<span class="string">"error(QAbstractSocket::SocketError)"</span>),self.serverError)</span><br><span class="line">    <span class="comment"># 连接</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">connectSlot</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># 判断当前连接状态</span></span><br><span class="line">        <span class="keyword">if</span> self.socket.waitForConnected():      <span class="comment"># 连接状态</span></span><br><span class="line">            self.serverStopped()</span><br><span class="line">            self.textBrowser_recv.append(<span class="string">u'断开连接'</span>)</span><br><span class="line">            self.pushButton_connect.setText(<span class="string">u'连接'</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            ip = self.lineEdit_ip.text()</span><br><span class="line">            port = self.lineEdit_port.text()</span><br><span class="line">            self.socket.connectToHost(ip, int(port))</span><br><span class="line">            <span class="comment"># 判断连接结果</span></span><br><span class="line">            <span class="keyword">if</span> self.socket.waitForConnected():</span><br><span class="line">                self.textBrowser_recv.append(<span class="string">u'连接成功'</span>)</span><br><span class="line">                self.pushButton_connect.setText(<span class="string">u'断开'</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                self.textBrowser_recv.append(<span class="string">u'连接失败'</span>)</span><br><span class="line">    <span class="comment"># 清空</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">clearSlot</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.textBrowser_recv.clear()</span><br><span class="line">    <span class="comment"># 发送</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sendSlot</span><span class="params">(self)</span>:</span></span><br><span class="line">        msg = self.lineEdit_send.text()</span><br><span class="line">        ch_msg = str(msg)</span><br><span class="line">        self.socket.write(ch_msg)</span><br><span class="line">    <span class="comment"># 接收</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">readFromServer</span><span class="params">(self)</span>:</span></span><br><span class="line">        msg = self.socket.readAll()</span><br><span class="line">        self.textBrowser_recv.append(QString(msg))</span><br><span class="line">    <span class="comment"># 关闭</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">serverStopped</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.socket.close()</span><br><span class="line">    <span class="comment">#打印错误信息</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">serverError</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.textBrowser_recv.append(<span class="string">"Error:&#123;&#125;"</span>.format(self.socket.errorString()))</span><br><span class="line">        self.socket.close()</span><br><span class="line">        self.pushButton_connect.setText(<span class="string">u'连接'</span>)</span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">"__main__"</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    mainui = mainUi()</span><br><span class="line">    mainui.show()</span><br><span class="line">    sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/27/django学习笔记二（模板）/#more" rel="contents">
+            <a class="btn" href="/2015/10/28/PyQtTcpClient/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -321,8 +315,8 @@
             
             
               
-                <a class="post-title-link" href="/2015/10/27/django学习笔记一（基本命令）/" itemprop="url">
-                  django学习笔记一（基本命令）
+                <a class="post-title-link" href="/2015/10/28/mac安装pyqt/" itemprop="url">
+                  mac安装pyqt
                 </a>
               
             
@@ -332,8 +326,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-10-27T22:52:29+08:00" content="2015-10-27">
-              2015-10-27
+            <time itemprop="dateCreated" datetime="2015-10-28T12:40:17+08:00" content="2015-10-28">
+              2015-10-28
             </time>
           </span>
 
@@ -342,8 +336,8 @@
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/PyQt/" itemprop="url" rel="index">
+                    <span itemprop="name">PyQt</span>
                   </a>
                 </span>
 
@@ -358,8 +352,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/10/27/django学习笔记一（基本命令）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/27/django学习笔记一（基本命令）/" itemprop="commentsCount"></span>
+                <a href="/2015/10/28/mac安装pyqt/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/mac安装pyqt/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -379,16 +373,18 @@
 
       
         
-          <h1 id="教程：">教程：</h1><blockquote>
+          <h1 id="系统版本：">系统版本：</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os x <span class="number">10.9</span></span><br></pre></td></tr></table></figure>
+<h1 id="软件版本：">软件版本：</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pyqt: PyQt-gpl-<span class="number">5.5</span><span class="number">.1</span>-snapshot-<span class="number">32</span>c52859b93a</span><br><span class="line">sip: sip-<span class="number">4.17</span>-snapshot-<span class="number">9102</span>d6c3daf0</span><br><span class="line">qt: qt-opensource-mac-x64-clang-<span class="number">5.5</span><span class="number">.0</span>.dmg</span><br></pre></td></tr></table></figure>
+<h1 id="安装：">安装：</h1><blockquote>
 <ul>
-<li>Python Django 快速Web应用开发入门</li>
-<li><a href="http://study.163.com/course/courseMain.htm?courseId=320022">http://study.163.com/course/courseMain.htm?courseId=320022</a></li>
+<li>1.安装sip</li>
+<li>1.1:解压sip-4.17-snapshot-9102d6c3daf0</li>
+<li>1.2：</li>
 </ul>
 </blockquote>
-<h1 id="版本：">版本：</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">python:</span><br><span class="line">    python -V</span><br><span class="line">    Python <span class="number">2.7</span><span class="number">.6</span></span><br><span class="line">django:</span><br><span class="line">    <span class="keyword">import</span> django</span><br><span class="line">    django.VERSION</span><br><span class="line">    (<span class="number">1</span>, <span class="number">6</span>, <span class="number">1</span>, <span class="string">'final'</span>, <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-<h1 id="开发环境：">开发环境：</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">uname -a</span><br><span class="line">Linux ubuntu <span class="number">3.13</span><span class="number">.0</span>-<span class="number">32</span>-generic <span class="comment">#57-Ubuntu SMP Tue Jul 15 03:51:12 UTC 2014 i686 i686 i686 GNU/Linux</span></span><br><span class="line"> </span><br><span class="line">ubuntu14<span class="number">.04L</span>TS</span><br><span class="line"><span class="number">32</span>位</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python configure.py -d /Library/Python/<span class="number">2.7</span>/site-packages --arch=x86_64</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/27/django学习笔记一（基本命令）/#more" rel="contents">
+            <a class="btn" href="/2015/10/28/mac安装pyqt/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -426,8 +422,8 @@
             
             
               
-                <a class="post-title-link" href="/2015/10/27/搭建hexo博客三/" itemprop="url">
-                  搭建hexo博客三
+                <a class="post-title-link" href="/2015/10/28/loadUi加载ui文件方法/" itemprop="url">
+                  loadUi加载ui文件方法
                 </a>
               
             
@@ -437,8 +433,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-10-27T22:14:48+08:00" content="2015-10-27">
-              2015-10-27
+            <time itemprop="dateCreated" datetime="2015-10-28T12:23:54+08:00" content="2015-10-28">
+              2015-10-28
             </time>
           </span>
 
@@ -447,8 +443,8 @@
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/PyQt/" itemprop="url" rel="index">
+                    <span itemprop="name">PyQt</span>
                   </a>
                 </span>
 
@@ -463,8 +459,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/10/27/搭建hexo博客三/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/27/搭建hexo博客三/" itemprop="commentsCount"></span>
+                <a href="/2015/10/28/loadUi加载ui文件方法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/loadUi加载ui文件方法/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -484,248 +480,213 @@
 
       
         
-          <span itemprop="articleBody">
-            
-              <h1 id="设置域名">设置域名</h1><blockquote>
-<ul>
-<li>1.修改_config.yml</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url: http://codelift.top</span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>2.在blog/source中添加CNAME文件</li>
-</ul>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">www.codelife.top</span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>3.阿里云 万网，解释域名</li>
-</ul>
-</blockquote>
-<p><img src="http://7xkw0s.com1.z0.glb.clouddn.com/搭建hexo博客三.png" alt="http://7xkw0s.com1.z0.glb.clouddn.com/搭建hexo博客三.png"></p>
-<blockquote>
-<ul>
-<li>4.上传代码</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d -g</span><br></pre></td></tr></table></figure>
-
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                <a class="post-title-link" href="/2015/10/27/搭建hexo博客二/" itemprop="url">
-                  搭建hexo博客二
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2015-10-27T22:11:46+08:00" content="2015-10-27">
-              2015-10-27
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/10/27/搭建hexo博客二/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/27/搭建hexo博客二/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <h1 id="帮助文档">帮助文档</h1><blockquote>
-<ul>
-<li><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">https://hexo.io/zh-cn/docs/</a></li>
-<li>（右上角可选择中文）</li>
-</ul>
-</blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"># Hexo Configuration</span><br><span class="line">## Docs: http://hexo.io/docs/configuration.html</span><br><span class="line">## Source: https://github.com/hexojs/hexo/</span><br><span class="line"># Site</span><br><span class="line">title: Dong's Blog      #网站标题</span><br><span class="line">subtitle: DongBlog      #网站副标题</span><br><span class="line">description: 个人博客   #网站描述</span><br><span class="line">author: dong            #作者</span><br><span class="line">language: zh-CN         #网站使用的语言</span><br><span class="line">timezone:               #网站时区。Hexo 预设使用您电脑的时区。</span><br><span class="line"># URL</span><br><span class="line">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span><br><span class="line">url: http://yoursite.com    #网址</span><br><span class="line">root: /                     #网站根目录</span><br><span class="line">permalink: :year/:month/:day/:title/    #文章的 永久链接 格式</span><br><span class="line">permalink_defaults:         #永久链接中各部分的默认值</span><br><span class="line"># Directory</span><br><span class="line">source_dir: source          #资源文件夹，这个文件夹用来存放内容。</span><br><span class="line">public_dir: public          #公共文件夹，这个文件夹用于存放生成的站点文件。</span><br><span class="line">tag_dir: tags               #标签文件夹</span><br><span class="line">archive_dir: archives       #归档文件夹</span><br><span class="line">category_dir: categories    #分类文件夹</span><br><span class="line">code_dir: downloads/code    #Include code 文件夹</span><br><span class="line">i18n_dir: :lang             #国际化（i18n）文件夹</span><br><span class="line">skip_render:                #跳过指定文件的渲染，您可使用 glob 来配置路径。</span><br><span class="line"># Writing</span><br><span class="line">new_post_name: :title.md    #新文章的文件名称</span><br><span class="line">default_layout: post        #预设布局</span><br><span class="line">titlecase: false            #把标题转换为 title case</span><br><span class="line">external_link: true         #在新标签中打开链接</span><br><span class="line">filename_case: 0            #把文件名称转换为 (1) 小写或 (2) 大写</span><br><span class="line">render_drafts: false        #显示草稿</span><br><span class="line">post_asset_folder: false    #启动 Asset 文件夹</span><br><span class="line">relative_link: false        #把链接改为与根目录的相对位址</span><br><span class="line">future: true                #显示未来的文章</span><br><span class="line">highlight:                  #代码块的设置</span><br><span class="line">  enable: true              #</span><br><span class="line">  line_number: true         #</span><br><span class="line">  auto_detect: true         #</span><br><span class="line">  tab_replace:              #</span><br><span class="line"># Category &amp; Tag</span><br><span class="line">default_category: uncategorized         #默认分类</span><br><span class="line">category_map:                           #分类别名</span><br><span class="line">tag_map:                                #标签别名</span><br><span class="line"># Date / Time format</span><br><span class="line">## Hexo uses Moment.js to parse and display date</span><br><span class="line">## You can customize the date format as defined in</span><br><span class="line">## http://momentjs.com/docs/#/displaying/format/</span><br><span class="line">date_format: YYYY-MM-DD     #日期格式</span><br><span class="line">time_format: HH:mm:ss       #时间格式</span><br><span class="line"># Pagination</span><br><span class="line">## Set per_page to 0 to disable pagination</span><br><span class="line">per_page: 10            #每页显示的文章量 (0 = 关闭分页功能)</span><br><span class="line">pagination_dir: page    #分页目录</span><br><span class="line"># Extensions</span><br><span class="line">## Plugins: http://hexo.io/plugins/</span><br><span class="line">## Themes: http://hexo.io/themes/</span><br><span class="line">theme: landscape    #当前主题名称</span><br><span class="line"># Deployment</span><br><span class="line">## Docs: http://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https://github.com/dloveff/dloveff.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                <a class="post-title-link" href="/2015/10/27/搭建hexo博客一/" itemprop="url">
-                  搭建hexo博客一
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2015-10-27T21:52:27+08:00" content="2015-10-27">
-              2015-10-27
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/10/27/搭建hexo博客一/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/27/搭建hexo博客一/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h1 id="简介">简介</h1><p>hexo是一个基于Node.js的静态博客程序，可以方便的生成静态网页托管在github和Heroku上。类似于jekyll、Octopress、Wordpress，我们可以用hexo创建自己的博客，托管到github或Heroku上，绑定自己的域名，用markdown写文章。本博客即使用hexo创建并托管在github上。</p>
-<blockquote>
-<ul>
-<li>windows环境</li>
-</ul>
-</blockquote>
-<h2 id="1-安装git">1.安装git</h2><blockquote>
-<ul>
-<li><a href="https://git-for-windows.github.io/">https://git-for-windows.github.io/</a></li>
-</ul>
-</blockquote>
-<h2 id="2-安装Node-js">2.安装Node.js</h2><blockquote>
-<ul>
-<li><a href="https://nodejs.org/en/">https://nodejs.org/en/</a></li>
-</ul>
-</blockquote>
+          <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding:utf-8</span></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtCore <span class="keyword">import</span> pyqtSlot, pyqtSignal</span><br><span class="line"><span class="keyword">from</span> PyQt5.uic <span class="keyword">import</span> loadUi</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> QMessageBox, QWidget, QApplication</span><br><span class="line"><span class="comment"># from PyQt5 import QtCore</span></span><br><span class="line"><span class="comment"># from PyQt5 import uic</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">QssFun</span><span class="params">(QWidget)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        super(QssFun, self).__init__()</span><br><span class="line">        loadUi(<span class="string">'ui.ui'</span>, self)</span><br><span class="line">        <span class="comment"># uic.loadUi('ui.ui', self)     #可用</span></span><br><span class="line">        self.setupSignalSlots()</span><br><span class="line">        self.pushButton_event.clicked.connect(self.eventFun)        <span class="comment">#可用</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setupSignalSlots</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.pushButton_2.clicked.connect(self.eventFun)</span><br><span class="line"><span class="decorator">    @pyqtSlot()</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">on_pushButton_MessageBox_clicked</span><span class="params">(self)</span>:</span></span><br><span class="line">        QMessageBox.about(self, <span class="string">'title'</span>, <span class="string">'about'</span>)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">eventFun</span><span class="params">(self)</span>:</span></span><br><span class="line">        QMessageBox.about(self, <span class="string">'title'</span>, <span class="string">'eventFun'</span>)</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    widget = QssFun()</span><br><span class="line">    widget.show()</span><br><span class="line">    sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/27/搭建hexo博客一/#more" rel="contents">
+            <a class="btn" href="/2015/10/28/loadUi加载ui文件方法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                <a class="post-title-link" href="/2015/10/28/django学习笔记十一（用户管理Auth系统使用）/" itemprop="url">
+                  django学习笔记十一（用户管理Auth系统使用）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-10-28T00:44:47+08:00" content="2015-10-28">
+              2015-10-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/10/28/django学习笔记十一（用户管理Auth系统使用）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/django学习笔记十一（用户管理Auth系统使用）/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <blockquote>
+<ul>
+<li>创建工程参考前面， 要创建数据库</li>
+</ul>
+</blockquote>
+<h1 id="查看数据库">查看数据库</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sqlite3 db.sqlite3 </span><br><span class="line">.tables;    //查看表</span><br><span class="line">.schema auth_user;     //查看表结构</span><br><span class="line">select * <span class="keyword">from</span> auth_user;     //查看用户表，默认用户表是 auth_user</span><br></pre></td></tr></table></figure>
+<h1 id="使用ipython">使用ipython</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py shell</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib.auth.models <span class="keyword">import</span> User</span><br><span class="line">User.objects.all();        //查看所有用户</span><br><span class="line">User.objects.create_user(username=<span class="string">'dong3'</span>, password=<span class="string">'dong'</span>, email=<span class="string">'dong@qq.com'</span>)    //创建新的用户</span><br><span class="line">dong3 = User.objects.get(username__exact=<span class="string">'dong3'</span>)    //变量负值 </span><br><span class="line">dong3.    //输入后按tab，这样可以查看dong3.下的所有命令</span><br><span class="line">dong3.is_staff    //查看状态</span><br><span class="line">dong3.is_staff = <span class="keyword">True</span>    //设置状态, 在网页后台中可以查看状态</span><br><span class="line">dong3.save()        //保存设置</span><br><span class="line">dong3.first_name = <span class="string">"dong"</span>    //设置first名</span><br><span class="line">dong3.save()</span><br><span class="line">dong3.delete()    //删除dong3用户</span><br><span class="line"></span><br><span class="line">exit        //退出</span><br></pre></td></tr></table></figure>
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                <a class="post-title-link" href="/2015/10/28/django学习笔记十（会话）/" itemprop="url">
+                  django学习笔记十（会话）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-10-28T00:32:32+08:00" content="2015-10-28">
+              2015-10-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/10/28/django学习笔记十（会话）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/django学习笔记十（会话）/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h1 id="方法一：">方法一：</h1><h1 id="1-创建工程">1.创建工程</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#工程名</span></span><br><span class="line">django-admin.py startproject project-name</span><br><span class="line">ex:</span><br><span class="line">django-admin.py startproject mysite</span><br><span class="line"><span class="comment">#app名</span></span><br><span class="line">python manage.py startapp app-name</span><br><span class="line">ex:</span><br><span class="line">python manage.py startapp blog</span><br></pre></td></tr></table></figure>
+<h1 id="2-修改settings-py">2.修改settings.py</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#apps中添加app名(blog)</span></span><br><span class="line"><span class="comment">#更改语言</span></span><br><span class="line">LANGUAGE_CODE = <span class="string">'zh-cn'</span></span><br></pre></td></tr></table></figure>
+<h1 id="3-修改urls-py">3.修改urls.py</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#增加</span></span><br><span class="line">url(<span class="string">r'^register/$'</span>, <span class="string">'blog.views.register'</span>),</span><br><span class="line">url(<span class="string">r'^login/$'</span>, <span class="string">'blog.views.login'</span>),</span><br><span class="line">url(<span class="string">r'^index/$'</span>, <span class="string">'blog.views.index'</span>),</span><br><span class="line">url(<span class="string">r'^logout/$'</span>, <span class="string">'blog.views.logout'</span>),</span><br></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/10/28/django学习笔记十（会话）/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -751,7 +712,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -792,21 +753,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">32</span>
+              <span class="site-state-item-count">44</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">21</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
