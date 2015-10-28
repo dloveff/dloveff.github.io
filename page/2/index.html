@@ -217,8 +217,8 @@
             
             
               
-                <a class="post-title-link" href="/2015/10/27/django学习笔记六/" itemprop="url">
-                  django学习笔记六
+                <a class="post-title-link" href="/2015/10/28/pythonvirtualenv/" itemprop="url">
+                  python virtualenv
                 </a>
               
             
@@ -228,8 +228,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-10-27T23:45:38+08:00" content="2015-10-27">
-              2015-10-27
+            <time itemprop="dateCreated" datetime="2015-10-28T13:12:36+08:00" content="2015-10-28">
+              2015-10-28
             </time>
           </span>
 
@@ -254,8 +254,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/10/27/django学习笔记六/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/27/django学习笔记六/" itemprop="commentsCount"></span>
+                <a href="/2015/10/28/pythonvirtualenv/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/pythonvirtualenv/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -275,116 +275,31 @@
 
       
         
-          <h1 id="安装ipython">安装ipython</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install ipython</span><br></pre></td></tr></table></figure>
-<h1 id="创建记录方法一：">创建记录方法一：</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">python manage.py shell</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> blog.models <span class="keyword">import</span> Employee</span><br><span class="line">Employee</span><br><span class="line">emp = Employee()</span><br><span class="line">emp.name = <span class="string">'dong'</span></span><br><span class="line">emp.save()</span><br></pre></td></tr></table></figure>
-<h1 id="查看数据库">查看数据库</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">mysql -uroot -p</span><br><span class="line">use mysite;</span><br><span class="line">select * <span class="keyword">from</span> blog_employee;</span><br></pre></td></tr></table></figure>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/27/django学习笔记六/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                <a class="post-title-link" href="/2015/10/27/django学习笔记五/" itemprop="url">
-                  django学习笔记五
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2015-10-27T23:37:35+08:00" content="2015-10-27">
-              2015-10-27
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/10/27/django学习笔记五/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/27/django学习笔记五/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <blockquote>
+          <h1 id="简介">简介</h1><blockquote>
 <ul>
-<li>注意：要启动数据库</li>
+<li>virtualenv用于创建独立的Python环境，多个Python相互独立，互不影响，它能够：</li>
+<li>1.在没有权限的情况下安装新套件</li>
+<li>2.不同应用可以使用不同的套件版本</li>
+<li>3.套件升级不影响其他应用</li>
 </ul>
 </blockquote>
-<h1 id="1-创建数据库">1.创建数据库</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br><span class="line">create database mysite default charset = utf8;</span><br></pre></td></tr></table></figure>
-<h1 id="2-修改数据库类型">2.修改数据库类型</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mysite/settings.py</span><br><span class="line">DATABASES = &#123;</span><br><span class="line">    <span class="string">'default'</span>: &#123;</span><br><span class="line">        <span class="string">'ENGINE'</span>: <span class="string">'django.db.backends.mysql'</span>,    //设置数据库类型</span><br><span class="line">        <span class="string">'NAME'</span>: <span class="string">'mysite'</span>,    //名称是上面创建的名称</span><br><span class="line">        <span class="string">'USER'</span>: <span class="string">'root'</span>,        //用户名是数据库的用户名</span><br><span class="line">        <span class="string">'PASSWORD'</span>: <span class="string">'dong'</span>,    //密码是数据库密码</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="3-修改blog/models-py_(创建数据库对象)">3.修改blog/models.py (创建数据库对象)</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Employee</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">     name = models.CharField(max_length = <span class="number">50</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="1-安装">1.安装</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install virtualenv</span><br></pre></td></tr></table></figure>
+<h1 id="2-创建虚拟环境">2.创建虚拟环境</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">virtualenv venv</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>venv 是一个自定义名称，随便写</li>
+<li>如果不想依赖这些package，那么可以加上参数 </li>
+<li>–no-site-packages　</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">virtualenv venv --no-site-packages</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>创建成功后，会在当前目录下生成对应的目录文件。</li>
+</ul>
+</blockquote>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/27/django学习笔记五/#more" rel="contents">
+            <a class="btn" href="/2015/10/28/pythonvirtualenv/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -422,8 +337,8 @@
             
             
               
-                <a class="post-title-link" href="/2015/10/27/django学习笔记四（模板标签）/" itemprop="url">
-                  django学习笔记四（模板标签）
+                <a class="post-title-link" href="/2015/10/28/pycharm设置git/" itemprop="url">
+                  pycharm 设置git
                 </a>
               
             
@@ -433,8 +348,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-10-27T23:35:45+08:00" content="2015-10-27">
-              2015-10-27
+            <time itemprop="dateCreated" datetime="2015-10-28T13:09:27+08:00" content="2015-10-28">
+              2015-10-28
             </time>
           </span>
 
@@ -459,8 +374,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/10/27/django学习笔记四（模板标签）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/27/django学习笔记四（模板标签）/" itemprop="commentsCount"></span>
+                <a href="/2015/10/28/pycharm设置git/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/pycharm设置git/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -482,7 +397,35 @@
         
           <span itemprop="articleBody">
             
-              <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;%if user%&#125;</span><br><span class="line"><span class="tag">&lt;<span class="title">li</span>&gt;</span>name:&#123;&#123;user.name&#125;&#125;<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">&#123;%else%&#125;</span><br><span class="line"><span class="tag">&lt;<span class="title">li</span>&gt;</span>not name:&#123;&#123;user.name&#125;&#125;<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">&#123;%endif%&#125;</span><br><span class="line">&#123;%for book in book_list%&#125;</span><br><span class="line"><span class="tag">&lt;<span class="title">li</span>&gt;</span>&#123;&#123;book&#125;&#125;<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">&#123;%endfor%&#125;</span><br><span class="line">&#123;%for k in user%&#125;</span><br><span class="line"><span class="tag">&lt;<span class="title">li</span>&gt;</span>&#123;&#123;k&#125;&#125;<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">&#123;%endfor%&#125;</span><br><span class="line">&#123;%for kk,v in user.items%&#125;</span><br><span class="line"><span class="tag">&lt;<span class="title">li</span>&gt;</span>&#123;&#123;kk&#125;&#125;:&#123;&#123;v&#125;&#125;<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">&#123;%endfor%&#125;</span><br><span class="line">&#123;%for kk,v in user.items%&#125;</span><br><span class="line"><span class="tag">&lt;<span class="title">li</span>&gt;</span>&#123;&#123;forloop.counter&#125;&#125;.&#123;&#123;kk&#125;&#125;:&#123;&#123;v&#125;&#125;<span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">&#123;%endfor%&#125;</span><br></pre></td></tr></table></figure>
+              <h1 id="1-配置git">1.配置git</h1><blockquote>
+<ul>
+<li>打开file，选择settings，找到Version Contorl，打开</li>
+<li>找到GitHub ，HOST填github.com，用户名，密码，test，稍等一会，会提示成功</li>
+<li>设置好后选择git，这里是输入你的git.exe的,下面是我的git.exe的位置：</li>
+<li>E:\Program Files (x86)\Git\bin\git.exe</li>
+</ul>
+</blockquote>
+<h1 id="2-clone代码">2.clone代码</h1><blockquote>
+<ul>
+<li>设置好以后</li>
+<li>在主界面中打开VCS菜单</li>
+<li>找到checkout from version control</li>
+<li>点击GitHub</li>
+<li>打开以后就可以发现有三个输入框</li>
+<li>第一个是你在GitHub上创建的项目文件夹（我的是myflask）</li>
+<li>第二个是你想要放置myflask的位置（也就是myflask会下载到这个地方）</li>
+<li>第三个是文件夹名称</li>
+<li>点击Clone,用过GitHub的肯定知道，这个就是把你在GIT上创建的项目文件夹同步到本地</li>
+<li>稍等一会儿，你会发现你的PyCharm的项目栏中多了一个文件夹，我的是myflask</li>
+</ul>
+</blockquote>
+<h1 id="3-提交代码">3.提交代码</h1><blockquote>
+<ul>
+<li>a.选中项目名称–右键–git–commit…–</li>
+<li>b.选中项目名称–右键–git–repository–push</li>
+</ul>
+</blockquote>
+
             
           </span>
         
@@ -519,8 +462,8 @@
             
             
               
-                <a class="post-title-link" href="/2015/10/27/django学习笔记三（模板变量）/" itemprop="url">
-                  django学习笔记三（模板变量）
+                <a class="post-title-link" href="/2015/10/28/pycharmpyqt环境配置/" itemprop="url">
+                  pycharm pyqt环境配置
                 </a>
               
             
@@ -530,8 +473,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-10-27T23:27:09+08:00" content="2015-10-27">
-              2015-10-27
+            <time itemprop="dateCreated" datetime="2015-10-28T13:01:10+08:00" content="2015-10-28">
+              2015-10-28
             </time>
           </span>
 
@@ -540,8 +483,8 @@
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/PyQt/" itemprop="url" rel="index">
+                    <span itemprop="name">PyQt</span>
                   </a>
                 </span>
 
@@ -556,8 +499,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/10/27/django学习笔记三（模板变量）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/27/django学习笔记三（模板变量）/" itemprop="commentsCount"></span>
+                <a href="/2015/10/28/pycharmpyqt环境配置/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/pycharmpyqt环境配置/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -577,16 +520,18 @@
 
       
         
-          <h1 id="方法一：(基本数据类型)">方法一：(基本数据类型)</h1><blockquote>
+          <h1 id="软件版本：">软件版本：</h1><blockquote>
 <ul>
-<li>1.修改blog/templates/index.html</li>
+<li>win7 64位</li>
+<li>pycharm 4.5.3</li>
+<li>python 2.7.9</li>
+<li>pyqt 4.8.7</li>
 </ul>
 </blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">title</span>&gt;</span>&#123;&#123;title&#125;&#125;<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">h1</span>&gt;</span>hello &#123;&#123;user&#125;&#125;<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1 id="2-修改blog/views-py">2.修改blog/views.py</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">return render_to_response('index.html', &#123;'title':'my page','user':'dong'&#125;)</span><br><span class="line">#title和user要对应index.html中的titles和user</span><br></pre></td></tr></table></figure>
-<h1 id="方法二：(字典)">方法二：(字典)</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">h1</span>&gt;</span>hello &#123;&#123;user.name&#125;&#125; &#123;&#123;user.age&#125;&#125; &#123;&#123;user.sex&#125;&#125;<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line">user = &#123;'name':'dong', 'age':23, 'sex':'male'&#125;</span><br><span class="line">return render_to_response('index.html', &#123;'title':'my page','user':user&#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="1-_设置Qt_Designer">1. 设置Qt Designer</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">File--settings(Ctrl+Alt+s)--Tools--External Tools--点击左上角加号+</span><br></pre></td></tr></table></figure>
+<p><img src="http://7xkw0s.com1.z0.glb.clouddn.com/pycharmpyqt环境配置1.png" alt="http://7xkw0s.com1.z0.glb.clouddn.com/pycharmpyqt环境配置1.png"></p>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/27/django学习笔记三（模板变量）/#more" rel="contents">
+            <a class="btn" href="/2015/10/28/pycharmpyqt环境配置/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -624,8 +569,8 @@
             
             
               
-                <a class="post-title-link" href="/2015/10/27/django学习笔记二（模板）/" itemprop="url">
-                  django学习笔记二（模板）
+                <a class="post-title-link" href="/2015/10/28/PyQtTcpClient/" itemprop="url">
+                  PyQt Tcp Client
                 </a>
               
             
@@ -635,8 +580,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-10-27T23:19:44+08:00" content="2015-10-27">
-              2015-10-27
+            <time itemprop="dateCreated" datetime="2015-10-28T12:53:03+08:00" content="2015-10-28">
+              2015-10-28
             </time>
           </span>
 
@@ -645,8 +590,8 @@
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/PyQt/" itemprop="url" rel="index">
+                    <span itemprop="name">PyQt</span>
                   </a>
                 </span>
 
@@ -661,8 +606,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/10/27/django学习笔记二（模板）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/27/django学习笔记二（模板）/" itemprop="commentsCount"></span>
+                <a href="/2015/10/28/PyQtTcpClient/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/PyQtTcpClient/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -682,15 +627,116 @@
 
       
         
-          <h1 id="1-创建模板">1.创建模板</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir blog/templates</span><br><span class="line">vi index.html</span><br></pre></td></tr></table></figure>
-<h1 id="方法一：">方法一：</h1><blockquote>
+          <h1 id="code-py">code.py</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding:utf-8</span></span><br><span class="line">__author__ = <span class="string">'dong'</span></span><br><span class="line"><span class="comment">#tcp client</span></span><br><span class="line"><span class="comment">#不支持中文</span></span><br><span class="line"><span class="comment">#2015.9.24</span></span><br><span class="line"><span class="keyword">from</span> PyQt4.QtGui <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> PyQt4.QtCore <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> myui <span class="keyword">import</span> Ui_Form</span><br><span class="line"><span class="keyword">from</span> PyQt4.QtNetwork <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">mainUi</span><span class="params">(QWidget, Ui_Form)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, parent=None)</span>:</span></span><br><span class="line">        QWidget.__init__(self, parent)</span><br><span class="line">        self.setupUi(self)</span><br><span class="line">        self.socket = QTcpSocket()</span><br><span class="line">        <span class="comment"># 以下是信号</span></span><br><span class="line">        self.connect(self.pushButton_connect, SIGNAL(<span class="string">'clicked()'</span>), self.connectSlot)    <span class="comment"># 连接</span></span><br><span class="line">        self.connect(self.pushButton_clear, SIGNAL(<span class="string">'clicked()'</span>), self.clearSlot)        <span class="comment"># 清空</span></span><br><span class="line">        self.connect(self.pushButton_send, SIGNAL(<span class="string">'clicked()'</span>), self.sendSlot)          <span class="comment"># 发送</span></span><br><span class="line">        self.socket.readyRead.connect(self.readFromServer)</span><br><span class="line">        self.socket.disconnected.connect(self.serverStopped)</span><br><span class="line">        self.connect(self.socket, SIGNAL(<span class="string">"error(QAbstractSocket::SocketError)"</span>),self.serverError)</span><br><span class="line">    <span class="comment"># 连接</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">connectSlot</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># 判断当前连接状态</span></span><br><span class="line">        <span class="keyword">if</span> self.socket.waitForConnected():      <span class="comment"># 连接状态</span></span><br><span class="line">            self.serverStopped()</span><br><span class="line">            self.textBrowser_recv.append(<span class="string">u'断开连接'</span>)</span><br><span class="line">            self.pushButton_connect.setText(<span class="string">u'连接'</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            ip = self.lineEdit_ip.text()</span><br><span class="line">            port = self.lineEdit_port.text()</span><br><span class="line">            self.socket.connectToHost(ip, int(port))</span><br><span class="line">            <span class="comment"># 判断连接结果</span></span><br><span class="line">            <span class="keyword">if</span> self.socket.waitForConnected():</span><br><span class="line">                self.textBrowser_recv.append(<span class="string">u'连接成功'</span>)</span><br><span class="line">                self.pushButton_connect.setText(<span class="string">u'断开'</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                self.textBrowser_recv.append(<span class="string">u'连接失败'</span>)</span><br><span class="line">    <span class="comment"># 清空</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">clearSlot</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.textBrowser_recv.clear()</span><br><span class="line">    <span class="comment"># 发送</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sendSlot</span><span class="params">(self)</span>:</span></span><br><span class="line">        msg = self.lineEdit_send.text()</span><br><span class="line">        ch_msg = str(msg)</span><br><span class="line">        self.socket.write(ch_msg)</span><br><span class="line">    <span class="comment"># 接收</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">readFromServer</span><span class="params">(self)</span>:</span></span><br><span class="line">        msg = self.socket.readAll()</span><br><span class="line">        self.textBrowser_recv.append(QString(msg))</span><br><span class="line">    <span class="comment"># 关闭</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">serverStopped</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.socket.close()</span><br><span class="line">    <span class="comment">#打印错误信息</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">serverError</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.textBrowser_recv.append(<span class="string">"Error:&#123;&#125;"</span>.format(self.socket.errorString()))</span><br><span class="line">        self.socket.close()</span><br><span class="line">        self.pushButton_connect.setText(<span class="string">u'连接'</span>)</span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">"__main__"</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    mainui = mainUi()</span><br><span class="line">    mainui.show()</span><br><span class="line">    sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/10/28/PyQtTcpClient/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                <a class="post-title-link" href="/2015/10/28/mac安装pyqt/" itemprop="url">
+                  mac安装pyqt
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-10-28T12:40:17+08:00" content="2015-10-28">
+              2015-10-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/PyQt/" itemprop="url" rel="index">
+                    <span itemprop="name">PyQt</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/10/28/mac安装pyqt/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/mac安装pyqt/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h1 id="系统版本：">系统版本：</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os x <span class="number">10.9</span></span><br></pre></td></tr></table></figure>
+<h1 id="软件版本：">软件版本：</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pyqt: PyQt-gpl-<span class="number">5.5</span><span class="number">.1</span>-snapshot-<span class="number">32</span>c52859b93a</span><br><span class="line">sip: sip-<span class="number">4.17</span>-snapshot-<span class="number">9102</span>d6c3daf0</span><br><span class="line">qt: qt-opensource-mac-x64-clang-<span class="number">5.5</span><span class="number">.0</span>.dmg</span><br></pre></td></tr></table></figure>
+<h1 id="安装：">安装：</h1><blockquote>
 <ul>
-<li>创建模板对象</li>
+<li>1.安装sip</li>
+<li>1.1:解压sip-4.17-snapshot-9102d6c3daf0</li>
+<li>1.2：</li>
 </ul>
 </blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">blog/views.py</span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</span><br><span class="line"><span class="keyword">from</span> django.template <span class="keyword">import</span> loader,Context</span><br><span class="line"><span class="comment">#创建loader对象，加载对应文件</span></span><br><span class="line">t = loader.get_template(<span class="string">'index.html'</span>)</span><br><span class="line"><span class="comment">#创建Context对象,存放模板的数据</span></span><br><span class="line">c = Context(&#123;&#125;)</span><br><span class="line"><span class="comment">#响应对应的内容</span></span><br><span class="line"><span class="keyword">return</span> HttpResponse(t.render(c))</span><br><span class="line"><span class="comment"># 完整代码</span></span><br><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render</span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</span><br><span class="line"><span class="keyword">from</span> django.template <span class="keyword">import</span> loader,Context</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">(req)</span>:</span></span><br><span class="line">    t = loader.get_template(<span class="string">'index.html'</span>)</span><br><span class="line">    c = Context(&#123;&#125;)</span><br><span class="line">    <span class="keyword">return</span> HttpResponse(t.render(c))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python configure.py -d /Library/Python/<span class="number">2.7</span>/site-packages --arch=x86_64</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/27/django学习笔记二（模板）/#more" rel="contents">
+            <a class="btn" href="/2015/10/28/mac安装pyqt/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -716,7 +762,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -757,21 +803,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">32</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>

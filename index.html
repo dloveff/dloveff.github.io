@@ -217,8 +217,8 @@
             
             
               
-                <a class="post-title-link" href="/2015/10/28/django学习笔记十一（用户管理Auth系统使用）/" itemprop="url">
-                  django学习笔记十一（用户管理Auth系统使用）
+                <a class="post-title-link" href="/2015/10/28/python调用C/" itemprop="url">
+                  python 调用C
                 </a>
               
             
@@ -228,7 +228,7 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-10-28T00:44:47+08:00" content="2015-10-28">
+            <time itemprop="dateCreated" datetime="2015-10-28T13:50:28+08:00" content="2015-10-28">
               2015-10-28
             </time>
           </span>
@@ -254,8 +254,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/10/28/django学习笔记十一（用户管理Auth系统使用）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/django学习笔记十一（用户管理Auth系统使用）/" itemprop="commentsCount"></span>
+                <a href="/2015/10/28/python调用C/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/python调用C/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -275,115 +275,11 @@
 
       
         
-          <span itemprop="articleBody">
-            
-              <blockquote>
-<ul>
-<li>创建工程参考前面， 要创建数据库</li>
-</ul>
-</blockquote>
-<h1 id="查看数据库">查看数据库</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sqlite3 db.sqlite3 </span><br><span class="line">.tables;    //查看表</span><br><span class="line">.schema auth_user;     //查看表结构</span><br><span class="line">select * <span class="keyword">from</span> auth_user;     //查看用户表，默认用户表是 auth_user</span><br></pre></td></tr></table></figure>
-<h1 id="使用ipython">使用ipython</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py shell</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib.auth.models <span class="keyword">import</span> User</span><br><span class="line">User.objects.all();        //查看所有用户</span><br><span class="line">User.objects.create_user(username=<span class="string">'dong3'</span>, password=<span class="string">'dong'</span>, email=<span class="string">'dong@qq.com'</span>)    //创建新的用户</span><br><span class="line">dong3 = User.objects.get(username__exact=<span class="string">'dong3'</span>)    //变量负值 </span><br><span class="line">dong3.    //输入后按tab，这样可以查看dong3.下的所有命令</span><br><span class="line">dong3.is_staff    //查看状态</span><br><span class="line">dong3.is_staff = <span class="keyword">True</span>    //设置状态, 在网页后台中可以查看状态</span><br><span class="line">dong3.save()        //保存设置</span><br><span class="line">dong3.first_name = <span class="string">"dong"</span>    //设置first名</span><br><span class="line">dong3.save()</span><br><span class="line">dong3.delete()    //删除dong3用户</span><br><span class="line"></span><br><span class="line">exit        //退出</span><br></pre></td></tr></table></figure>
-            
-          </span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                <a class="post-title-link" href="/2015/10/28/django学习笔记十（会话）/" itemprop="url">
-                  django学习笔记十（会话）
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2015-10-28T00:32:32+08:00" content="2015-10-28">
-              2015-10-28
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/10/28/django学习笔记十（会话）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/django学习笔记十（会话）/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h1 id="方法一：">方法一：</h1><h1 id="1-创建工程">1.创建工程</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#工程名</span></span><br><span class="line">django-admin.py startproject project-name</span><br><span class="line">ex:</span><br><span class="line">django-admin.py startproject mysite</span><br><span class="line"><span class="comment">#app名</span></span><br><span class="line">python manage.py startapp app-name</span><br><span class="line">ex:</span><br><span class="line">python manage.py startapp blog</span><br></pre></td></tr></table></figure>
-<h1 id="2-修改settings-py">2.修改settings.py</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#apps中添加app名(blog)</span></span><br><span class="line"><span class="comment">#更改语言</span></span><br><span class="line">LANGUAGE_CODE = <span class="string">'zh-cn'</span></span><br></pre></td></tr></table></figure>
-<h1 id="3-修改urls-py">3.修改urls.py</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#增加</span></span><br><span class="line">url(<span class="string">r'^register/$'</span>, <span class="string">'blog.views.register'</span>),</span><br><span class="line">url(<span class="string">r'^login/$'</span>, <span class="string">'blog.views.login'</span>),</span><br><span class="line">url(<span class="string">r'^index/$'</span>, <span class="string">'blog.views.index'</span>),</span><br><span class="line">url(<span class="string">r'^logout/$'</span>, <span class="string">'blog.views.logout'</span>),</span><br></pre></td></tr></table></figure>
+          <h1 id="main-c">main.c</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include&lt;stdio.h&gt;</span></span><br><span class="line">int test()</span><br><span class="line">&#123;</span><br><span class="line">   printf(<span class="string">"by dong\n"</span>);</span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="编译">编译</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc main.c -fPIC -shared -o main.so</span><br></pre></td></tr></table></figure>
+<h1 id="control-py">control.py</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> ctypes</span><br><span class="line">so = ctypes.CDLL(<span class="string">"./main.so"</span>)</span><br><span class="line">so.test()</span><br></pre></td></tr></table></figure>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/28/django学习笔记十（会话）/#more" rel="contents">
+            <a class="btn" href="/2015/10/28/python调用C/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -421,8 +317,8 @@
             
             
               
-                <a class="post-title-link" href="/2015/10/28/django学习笔记九（文件上传）/" itemprop="url">
-                  django学习笔记九（文件上传）
+                <a class="post-title-link" href="/2015/10/28/字典/" itemprop="url">
+                  字典
                 </a>
               
             
@@ -432,7 +328,7 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-10-28T00:19:49+08:00" content="2015-10-28">
+            <time itemprop="dateCreated" datetime="2015-10-28T13:39:01+08:00" content="2015-10-28">
               2015-10-28
             </time>
           </span>
@@ -458,8 +354,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/10/28/django学习笔记九（文件上传）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/django学习笔记九（文件上传）/" itemprop="commentsCount"></span>
+                <a href="/2015/10/28/字典/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/字典/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -479,19 +375,11 @@
 
       
         
-          <blockquote>
-<ul>
-<li>注：在 django学习笔记8（表单）项目中增加</li>
-</ul>
-</blockquote>
-<h1 id="方法一：">方法一：</h1><blockquote>
-<ul>
-<li>views.py</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render_to_response</span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</span><br><span class="line"><span class="keyword">from</span> django <span class="keyword">import</span> forms</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserForm</span><span class="params">(forms.Form)</span>:</span></span><br><span class="line">    username = forms.CharField()</span><br><span class="line">    headImg = forms.FileField()</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">register</span><span class="params">(req)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> req.method == <span class="string">"POST"</span>:</span><br><span class="line">        uf = UserForm(req.POST, req.FILES)</span><br><span class="line">        <span class="keyword">if</span> uf.is_valid():</span><br><span class="line">            <span class="keyword">print</span> uf.cleaned_data[<span class="string">'username'</span>]</span><br><span class="line">            <span class="comment">#print req.FILES</span></span><br><span class="line">            <span class="keyword">print</span> uf.cleaned_data[<span class="string">'headImg'</span>].name</span><br><span class="line">            <span class="keyword">print</span> uf.cleaned_data[<span class="string">'headImg'</span>].size</span><br><span class="line">            fp = file(<span class="string">'/home/dong/django/project/mysite7/upload/'</span>+uf.cleaned_data[<span class="string">'headImg'</span>].name, <span class="string">'wb'</span>)</span><br><span class="line">            s = uf.cleaned_data[<span class="string">'headImg'</span>].read()</span><br><span class="line">            fp.write(s)</span><br><span class="line">            fp.close()</span><br><span class="line">            <span class="keyword">return</span> HttpResponse(<span class="string">'ok'</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        uf = UserForm()</span><br><span class="line">    <span class="keyword">return</span> render_to_response(<span class="string">'register.html'</span>, &#123;<span class="string">'uf'</span>:uf&#125;)</span><br></pre></td></tr></table></figure>
+          <h1 id="创建：生成字典">创建：生成字典</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">createDict</span><span class="params">(key, value)</span>:</span></span><br><span class="line">    dicts = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> (k, v) <span class="keyword">in</span> zip(key, value):</span><br><span class="line">        dicts[k] = v</span><br><span class="line">    <span class="keyword">print</span> dicts</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    a = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br><span class="line">    b = [<span class="string">'1'</span>, <span class="string">'2'</span>]</span><br><span class="line">    <span class="comment"># createDict('a', 'b')</span></span><br><span class="line">    createDict(a, b)</span><br></pre></td></tr></table></figure>
+<h1 id="字典的基本形态">字典的基本形态</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dic=&#123;key1:value1, key2:value2...&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="创建方式一：直接型">创建方式一：直接型</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dict1=&#123;&#125;  </span><br><span class="line">dict2=&#123;<span class="string">'name'</span>:<span class="string">'earth'</span>, <span class="string">'port'</span>:<span class="string">'80'</span>&#125;</span><br><span class="line">dict = &#123;<span class="string">'name'</span>:<span class="string">'dong'</span>, <span class="string">'age'</span>:<span class="string">'24'</span>, <span class="string">'port'</span>:<span class="string">'80'</span>&#125;</span><br></pre></td></tr></table></figure>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/28/django学习笔记九（文件上传）/#more" rel="contents">
+            <a class="btn" href="/2015/10/28/字典/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -529,8 +417,8 @@
             
             
               
-                <a class="post-title-link" href="/2015/10/28/django学习笔记八（表单）/" itemprop="url">
-                  django学习笔记八（表单）
+                <a class="post-title-link" href="/2015/10/28/元组/" itemprop="url">
+                  元组
                 </a>
               
             
@@ -540,7 +428,7 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-10-28T00:05:17+08:00" content="2015-10-28">
+            <time itemprop="dateCreated" datetime="2015-10-28T13:33:54+08:00" content="2015-10-28">
               2015-10-28
             </time>
           </span>
@@ -566,8 +454,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/10/28/django学习笔记八（表单）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/django学习笔记八（表单）/" itemprop="commentsCount"></span>
+                <a href="/2015/10/28/元组/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/元组/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -587,10 +475,20 @@
 
       
         
-          <h1 id="1-创建新的工程">1.创建新的工程</h1><h1 id="2-修改settings-py">2.修改settings.py</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#1.增加app</span></span><br><span class="line"><span class="comment">#2.注释</span></span><br><span class="line"><span class="string">'django.middleware.csrf.CsrfViewMiddleware'</span>,</span><br></pre></td></tr></table></figure>
-<h1 id="3-修改views-py">3.修改views.py</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.shortcuts <span class="keyword">import</span> render_to_response</span><br><span class="line"><span class="keyword">from</span> django <span class="keyword">import</span> forms</span><br><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserForm</span><span class="params">(forms.Form)</span>:</span></span><br><span class="line">    name = forms.CharField()</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">register</span><span class="params">(req)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> req.method == <span class="string">'POST'</span>:    //POST方法 表单提交</span><br><span class="line">        form = UserForm(req.POST)    //表单对象数据邦定</span><br><span class="line">        <span class="keyword">if</span> form.is_valid():        //数据验证是否有效</span><br><span class="line">            <span class="keyword">print</span> form.cleaned_data        //数据获取 </span><br><span class="line">            <span class="keyword">return</span> HttpResponse(<span class="string">'Ok'</span>)</span><br><span class="line">    <span class="keyword">else</span>:        //get方法</span><br><span class="line">        form = UserForm()    //生成form对象</span><br><span class="line">    <span class="keyword">return</span> render_to_response(<span class="string">'register.html'</span>, &#123;<span class="string">'form'</span>:form&#125;)</span><br></pre></td></tr></table></figure>
+          <h1 id="元组中的元素值是不允许修改">元组中的元素值是不允许修改</h1><blockquote>
+<ul>
+<li></li>
+</ul>
+</blockquote>
+<h1 id="创建：">创建：</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tup1 = ()</span><br><span class="line"><span class="comment">#元组中只包含一个元素时，需要在元素后面添加逗号</span></span><br><span class="line">tup2 = (<span class="string">'5'</span>,)</span><br><span class="line">tup3 = (<span class="string">'physics'</span>, <span class="string">'chemistry'</span>, <span class="number">1997</span>, <span class="number">2000</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="访问">访问</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">tup1 = (<span class="string">'physics'</span>, <span class="string">'chemistry'</span>, <span class="number">1997</span>, <span class="number">2000</span>);</span><br><span class="line">tup2 = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span> );</span><br><span class="line"><span class="keyword">print</span> tup1[<span class="number">0</span>]</span><br><span class="line"><span class="keyword">print</span> tup2[<span class="number">1</span>:<span class="number">5</span>]</span><br><span class="line"><span class="comment">#输出</span></span><br><span class="line">physics</span><br><span class="line">(<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="修改">修改</h1><blockquote>
+<ul>
+<li>元组中的元素值是不允许修改的，但可以对元组进行连接组合</li>
+</ul>
+</blockquote>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/28/django学习笔记八（表单）/#more" rel="contents">
+            <a class="btn" href="/2015/10/28/元组/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -628,8 +526,8 @@
             
             
               
-                <a class="post-title-link" href="/2015/10/28/django学习笔记七（admin后台管理）/" itemprop="url">
-                  django学习笔记七（admin后台管理）
+                <a class="post-title-link" href="/2015/10/28/pythonQueue模块/" itemprop="url">
+                  python Queue模块
                 </a>
               
             
@@ -639,7 +537,7 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-10-28T00:01:16+08:00" content="2015-10-28">
+            <time itemprop="dateCreated" datetime="2015-10-28T13:28:07+08:00" content="2015-10-28">
               2015-10-28
             </time>
           </span>
@@ -665,8 +563,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/10/28/django学习笔记七（admin后台管理）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/django学习笔记七（admin后台管理）/" itemprop="commentsCount"></span>
+                <a href="/2015/10/28/pythonQueue模块/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/pythonQueue模块/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -686,18 +584,146 @@
 
       
         
-          <span itemprop="articleBody">
-            
-              <h1 id="1-创建一个新工程和app">1.创建一个新工程和app</h1><h1 id="2-修改setting-py">2.修改setting.py</h1><blockquote>
+          <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Queue</span><br><span class="line">myqueue = Queue.Queue(maxsize = <span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
 <ul>
-<li>增加app名</li>
+<li>Queue.Queue类即是一个队列的同步实现。队列长度可为无限或者有限。可通过Queue的构造函数的可选参数maxsize来设定队列长度。如果maxsize小于1就表示队列长度无限。</li>
+<li>将一个值放入队列中</li>
 </ul>
 </blockquote>
-<h1 id="3-修改blog/models-py">3.修改blog/models.py</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line">sex_choices=(</span><br><span class="line">    (<span class="string">'f'</span>, <span class="string">'famale'</span>),</span><br><span class="line">    (<span class="string">'m'</span>, <span class="string">'male'</span>),</span><br><span class="line">)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    name = models.CharField(max_length=<span class="number">30</span>)</span><br><span class="line">    sex = models.CharField(max_length=<span class="number">1</span>, choices=sex_choices)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__unicode__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.name</span><br></pre></td></tr></table></figure>
-<h1 id="4-修改blog/admin-py">4.修改blog/admin.py</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"><span class="keyword">from</span> blog.models <span class="keyword">import</span> User</span><br><span class="line">admin.site.register(User)</span><br></pre></td></tr></table></figure>
-<h1 id="手动查看sqlite3数据库">手动查看sqlite3数据库</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install sqlite3</span><br><span class="line">sqlite3 db.sqlite3    //sqlite3 数据库名</span><br><span class="line">.tables    //查看表</span><br><span class="line">select * <span class="keyword">from</span> blog_user;     //查看数据库</span><br><span class="line">.exit       //退出</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myqueue.put(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>调用队列对象的put()方法在队尾插入一个项目。put()有两个参数，第一个item为必需的，为插入项目的值；第二个block为可选参数，默认为1。如果队列当前为空且block为1，put()方法就使调用线程暂停,直到空出一个数据单元。如果block为0，put方法将引发Full异常。</li>
+<li>将一个值从队列中取出</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myqueue.get()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>调用队列对象的get()方法从队头删除并返回一个项目。可选参数为block，默认为True。如果队列为空且block为True，get()就使调用线程暂停，直至有项目可用。如果队列为空且block为False，队列将引发Empty异常。</li>
+</ul>
+</blockquote>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/10/28/pythonQueue模块/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
             
+            
+              
+                <a class="post-title-link" href="/2015/10/28/pythonsupervisor/" itemprop="url">
+                  python supervisor
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-10-28T13:19:33+08:00" content="2015-10-28">
+              2015-10-28
+            </time>
           </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/10/28/pythonsupervisor/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/pythonsupervisor/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h1 id="简介">简介</h1><blockquote>
+<ul>
+<li>supervisor 是由python语言编写、基于linux操作系统的一款服务器管理工具，用以监控服务器的运行，发现问题能立即自动预警及自动重启等功能。</li>
+</ul>
+</blockquote>
+<h1 id="1-添加程序">1.添加程序</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#在/etc/supervisor/conf.d目录下新建xxx.conf，supervisor将自动加入到运行列表</span></span><br><span class="line">sudo vi app.conf</span><br><span class="line">[program:app]</span><br><span class="line">command = python /home/dong/public/app.py</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>每次更新完配置文件后都要更新控制台</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo supervisorctl update</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>或者进入控制台后重新加载配置文件</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reload</span><br></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/10/28/pythonsupervisor/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -720,7 +746,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -761,21 +787,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">32</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
