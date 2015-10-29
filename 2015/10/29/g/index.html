@@ -43,7 +43,7 @@
 
 
 
-  <meta name="keywords" content="tftp," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -59,73 +59,16 @@
 
 
 
-<meta name="description" content="第一步：
-
-先说明一下ubuntu默认root是禁用的，所以先要创建root用户，这样以后不用再sudo了：
-
-
-1$ su root
-
-
-输入密码获取获取管理员账户操作
-
-
-第二步
-
-安装服务
-
-
-12安装tftp-hpa   tftpd-hpa  xinetd# apt-get install tftp-hpa tftpd-hpa xinetd
-第三步
-
-在创建文件夹/tftpboot  （这">
+<meta name="description" content="个人博客">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ubuntu12.04搭建tftp服务器">
-<meta property="og:url" content="http://codelife.top/2015/10/28/ubuntu12-04搭建tftp服务器/index.html">
+<meta property="og:title" content="g">
+<meta property="og:url" content="http://codelife.top/2015/10/29/g/index.html">
 <meta property="og:site_name" content="Dong's Blog">
-<meta property="og:description" content="第一步：
-
-先说明一下ubuntu默认root是禁用的，所以先要创建root用户，这样以后不用再sudo了：
-
-
-1$ su root
-
-
-输入密码获取获取管理员账户操作
-
-
-第二步
-
-安装服务
-
-
-12安装tftp-hpa   tftpd-hpa  xinetd# apt-get install tftp-hpa tftpd-hpa xinetd
-第三步
-
-在创建文件夹/tftpboot  （这">
-<meta property="og:updated_time" content="2015-10-28T13:21:06.769Z">
+<meta property="og:description" content="个人博客">
+<meta property="og:updated_time" content="2015-10-29T05:23:31.293Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ubuntu12.04搭建tftp服务器">
-<meta name="twitter:description" content="第一步：
-
-先说明一下ubuntu默认root是禁用的，所以先要创建root用户，这样以后不用再sudo了：
-
-
-1$ su root
-
-
-输入密码获取获取管理员账户操作
-
-
-第二步
-
-安装服务
-
-
-12安装tftp-hpa   tftpd-hpa  xinetd# apt-get install tftp-hpa tftpd-hpa xinetd
-第三步
-
-在创建文件夹/tftpboot  （这">
+<meta name="twitter:title" content="g">
+<meta name="twitter:description" content="个人博客">
 
 
 
@@ -137,7 +80,7 @@
   };
 </script>
 
-  <title> ubuntu12.04搭建tftp服务器 | Dong's Blog </title>
+  <title> g | Dong's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -273,7 +216,7 @@
             
             
               
-                ubuntu12.04搭建tftp服务器
+                g
               
             
           </h1>
@@ -282,34 +225,19 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-10-28T21:04:12+08:00" content="2015-10-28">
-              2015-10-28
+            <time itemprop="dateCreated" datetime="2015-10-29T13:23:31+08:00" content="2015-10-29">
+              2015-10-29
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/10/28/ubuntu12-04搭建tftp服务器/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/ubuntu12-04搭建tftp服务器/" itemprop="commentsCount"></span>
+                <a href="/2015/10/29/g/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/29/g/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -328,115 +256,24 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="第一步：">第一步：</h1><blockquote>
-<ul>
-<li>先说明一下ubuntu默认root是禁用的，所以先要创建root用户，这样以后不用再sudo了：</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ su root</span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>输入密码获取获取管理员账户操作</li>
-</ul>
-</blockquote>
-<h1 id="第二步">第二步</h1><blockquote>
-<ul>
-<li>安装服务</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">安装tftp-hpa   tftpd-hpa  xinetd</span><br><span class="line"><span class="comment"># apt-get install tftp-hpa tftpd-hpa xinetd</span></span><br></pre></td></tr></table></figure>
-<h1 id="第三步">第三步</h1><blockquote>
-<ul>
-<li>在创建文件夹/tftpboot  （这个是服务器的文件交换目录，将来客户机获取服务器文件时就是从这个文件夹中获取的），并且修改这个文件夹的权限为777</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#mkdir /tftpboot</span></span><br><span class="line"><span class="comment">#chmod -R 777 /tftpboot</span></span><br></pre></td></tr></table></figure>
-<h1 id="第四步">第四步</h1><blockquote>
-<ul>
-<li>修改tftp配置文件，如果没有就创建，我喜欢用vim</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#vim  /etc/xinetd.d/tftp</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<blockquote>
-<ul>
-<li>文件内容为：</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">service tftp</span><br><span class="line"></span><br><span class="line">         &#123;</span><br><span class="line"></span><br><span class="line">             disable         = no</span><br><span class="line"></span><br><span class="line">             socket_type     = dgram</span><br><span class="line"></span><br><span class="line">             protocol        = udp</span><br><span class="line"></span><br><span class="line">             wait            = yes</span><br><span class="line"></span><br><span class="line">             user            = root</span><br><span class="line"></span><br><span class="line">             server          = /usr/sbin/<span class="keyword">in</span>.tftpd</span><br><span class="line"></span><br><span class="line">             server_args     = -s /tftpboot                 //此处文件目录就是上面说道的服务器文件交换目录</span><br><span class="line"></span><br><span class="line">             source          = <span class="number">11</span></span><br><span class="line"></span><br><span class="line">             cps             = <span class="number">100</span> <span class="number">2</span></span><br><span class="line"></span><br><span class="line">             flags =IPv4</span><br><span class="line"></span><br><span class="line">         &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="第五步">第五步</h1><blockquote>
-<ul>
-<li>修改inetd.conf文件</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vim /etc/inetd.conf</span></span><br><span class="line">``</span><br><span class="line"></span><br><span class="line">&gt; * 一般这个文件在打开的时候里面是有内容的，只要在最后添加下面内容即可：</span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">tftp  dgram    udp    wait    nobody    /usr/sbin/tcpd</span><br><span class="line">/usr/sbin/<span class="keyword">in</span>.tftpd   /tftpboot                           //此处文件目录就是上面说道的服务器文件交换目录</span><br></pre></td></tr></table></figure>
-<h1 id="第六步">第六步</h1><blockquote>
-<p>*修改tftpd-hpa文件</p>
-<ul>
-<li><h1 id="vim_/etc/default/tftpd-hpa">vim /etc/default/tftpd-hpa</h1></li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#RUN_DAEMON="no"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#OPTIONS="-s /home/zyp/tftpboot -c -p -U tftpd"</span></span><br><span class="line"></span><br><span class="line">TFTP_USERNAME=<span class="string">"tftp"</span></span><br><span class="line"></span><br><span class="line">TFTP_DIRECTORY=<span class="string">"/tftpboot"</span>                     //此处文件目录就是上面说道的服务器文件交换目录</span><br><span class="line"></span><br><span class="line">TFTP_ADDRESS=<span class="string">"0.0.0.0:69"</span></span><br><span class="line"></span><br><span class="line">TFTP_OPTIONS=<span class="string">"-l -c -s"</span></span><br></pre></td></tr></table></figure>
-<h1 id="第七步">第七步</h1><blockquote>
-<ul>
-<li>重启服务</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># service tftpd-hpa restart</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># sudo /etc/init.d/xinetd reload</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># sudo /etc/init.d/xinetd restart</span></span><br></pre></td></tr></table></figure>
-<p>#第八步</p>
-<blockquote>
-<ul>
-<li><p>本地测试</p>
-</li>
-<li><p>在/tftpboot 下创建测试文件test，并修改test的文件权限</p>
-</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#cd /tftpboot</span></span><br><span class="line"><span class="comment">#touch test</span></span><br><span class="line"><span class="comment">#chmod 777 test</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>测试一下 tftp服务：</li>
-</ul>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#cd /</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#tftp 127.0.0.1</span></span><br><span class="line"></span><br><span class="line">tftp&gt;get test</span><br><span class="line"></span><br><span class="line">tftp&gt;q</span><br><span class="line"></span><br><span class="line"><span class="comment">#ls</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li>查看当前目录，发现test 文件已在当前目录，此时tftp搭建成功！</li>
-</ul>
-</blockquote>
-<h1 id="附：tftp与ftp的区别">附：tftp与ftp的区别</h1><blockquote>
-<ul>
-<li>TFTP是一个传输文件的简单协议，它其于UDP协议而实现，但是我们也不能确定有些TFTP协议是基于其它传输协议完成的。此协议设计的时候是进行小文件传输的。因此它不具备通常的FTP的许多功能，它只能从文件服务器上获得或写入文件，不能列出目录，不进行认证，它传输8位数据。传输中有三种模式：netascii，这是8位的ASCII码形式，另一种是octet，这是8位源数据类型；最后一种mail已经不再支持，它将返回的数据直接返回给用户而不是保存为文件。</li>
-</ul>
-</blockquote>
-</span>
+        <span itemprop="articleBody"></span>
       
     </div>
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/tftp/" rel="tag">#tftp</a>
-          
-        </div>
       
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/10/28/python调用C/" rel="next" title="python 调用C">
-                <i class="fa fa-chevron-left"></i> python 调用C
+              <a href="/2015/10/28/使用python开发微信公众平台教程目录汇总/" rel="next" title="使用python开发微信公众平台教程目录汇总">
+                <i class="fa fa-chevron-left"></i> 使用python开发微信公众平台教程目录汇总
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/10/28/移植Lua到ARM平台/" rel="prev" title="移植Lua到ARM平台">
-                移植Lua到ARM平台 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -451,10 +288,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/10/28/ubuntu12-04搭建tftp服务器/"
-     data-title="ubuntu12.04搭建tftp服务器"
+        <div class="ds-share flat" data-thread-key="2015/10/29/g/"
+     data-title="g"
      data-content=""
-     data-url="http://codelife.top/2015/10/28/ubuntu12-04搭建tftp服务器/">
+     data-url="http://codelife.top/2015/10/29/g/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -482,8 +319,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/10/28/ubuntu12-04搭建tftp服务器/"
-           data-title="ubuntu12.04搭建tftp服务器" data-url="http://codelife.top/2015/10/28/ubuntu12-04搭建tftp服务器/">
+      <div class="ds-thread" data-thread-key="2015/10/29/g/"
+           data-title="g" data-url="http://codelife.top/2015/10/29/g/">
       </div>
     
   </div>
@@ -577,7 +414,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一步："><span class="nav-number">1.</span> <span class="nav-text">第一步：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二步"><span class="nav-number">2.</span> <span class="nav-text">第二步</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三步"><span class="nav-number">3.</span> <span class="nav-text">第三步</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第四步"><span class="nav-number">4.</span> <span class="nav-text">第四步</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第五步"><span class="nav-number">5.</span> <span class="nav-text">第五步</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第六步"><span class="nav-number">6.</span> <span class="nav-text">第六步</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vim_/etc/default/tftpd-hpa"><span class="nav-number">7.</span> <span class="nav-text">vim /etc/default/tftpd-hpa</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第七步"><span class="nav-number">8.</span> <span class="nav-text">第七步</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附：tftp与ftp的区别"><span class="nav-number">9.</span> <span class="nav-text">附：tftp与ftp的区别</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

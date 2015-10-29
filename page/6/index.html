@@ -217,6 +217,106 @@
             
             
               
+                <a class="post-title-link" href="/2015/10/28/django学习笔记十（会话）/" itemprop="url">
+                  django学习笔记十（会话）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-10-28T00:32:32+08:00" content="2015-10-28">
+              2015-10-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/10/28/django学习笔记十（会话）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/django学习笔记十（会话）/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h1 id="方法一：">方法一：</h1><h1 id="1-创建工程">1.创建工程</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#工程名</span></span><br><span class="line">django-admin.py startproject project-name</span><br><span class="line">ex:</span><br><span class="line">django-admin.py startproject mysite</span><br><span class="line"><span class="comment">#app名</span></span><br><span class="line">python manage.py startapp app-name</span><br><span class="line">ex:</span><br><span class="line">python manage.py startapp blog</span><br></pre></td></tr></table></figure>
+<h1 id="2-修改settings-py">2.修改settings.py</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#apps中添加app名(blog)</span></span><br><span class="line"><span class="comment">#更改语言</span></span><br><span class="line">LANGUAGE_CODE = <span class="string">'zh-cn'</span></span><br></pre></td></tr></table></figure>
+<h1 id="3-修改urls-py">3.修改urls.py</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#增加</span></span><br><span class="line">url(<span class="string">r'^register/$'</span>, <span class="string">'blog.views.register'</span>),</span><br><span class="line">url(<span class="string">r'^login/$'</span>, <span class="string">'blog.views.login'</span>),</span><br><span class="line">url(<span class="string">r'^index/$'</span>, <span class="string">'blog.views.index'</span>),</span><br><span class="line">url(<span class="string">r'^logout/$'</span>, <span class="string">'blog.views.logout'</span>),</span><br></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/10/28/django学习笔记十（会话）/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
                 <a class="post-title-link" href="/2015/10/28/django学习笔记九（文件上传）/" itemprop="url">
                   django学习笔记九（文件上传）
                 </a>
@@ -612,111 +712,6 @@
 
 
     
-      
-
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                <a class="post-title-link" href="/2015/10/27/django学习笔记五/" itemprop="url">
-                  django学习笔记五
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2015-10-27T23:37:35+08:00" content="2015-10-27">
-              2015-10-27
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/10/27/django学习笔记五/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/27/django学习笔记五/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <blockquote>
-<ul>
-<li>注意：要启动数据库</li>
-</ul>
-</blockquote>
-<h1 id="1-创建数据库">1.创建数据库</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br><span class="line">create database mysite default charset = utf8;</span><br></pre></td></tr></table></figure>
-<h1 id="2-修改数据库类型">2.修改数据库类型</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mysite/settings.py</span><br><span class="line">DATABASES = &#123;</span><br><span class="line">    <span class="string">'default'</span>: &#123;</span><br><span class="line">        <span class="string">'ENGINE'</span>: <span class="string">'django.db.backends.mysql'</span>,    //设置数据库类型</span><br><span class="line">        <span class="string">'NAME'</span>: <span class="string">'mysite'</span>,    //名称是上面创建的名称</span><br><span class="line">        <span class="string">'USER'</span>: <span class="string">'root'</span>,        //用户名是数据库的用户名</span><br><span class="line">        <span class="string">'PASSWORD'</span>: <span class="string">'dong'</span>,    //密码是数据库密码</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="3-修改blog/models-py_(创建数据库对象)">3.修改blog/models.py (创建数据库对象)</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Employee</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">     name = models.CharField(max_length = <span class="number">50</span>)</span><br></pre></td></tr></table></figure>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/27/django学习笔记五/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -762,7 +757,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">44</span>
+              <span class="site-state-item-count">45</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

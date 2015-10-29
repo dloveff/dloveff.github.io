@@ -217,6 +217,138 @@
             
             
               
+                <a class="post-title-link" href="/2015/10/28/微信公众平台开发六/" itemprop="url">
+                  微信公众平台开发六
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-10-28T22:19:46+08:00" content="2015-10-28">
+              2015-10-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/10/28/微信公众平台开发六/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/微信公众平台开发六/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <h1 id="长链接转短链接接口">长链接转短链接接口</h1><hr>
+<blockquote>
+<ul>
+<li>主要使用场景： 开发者用于生成二维码的原链接（商品、支付二维码等）太长导致扫码速度和成功率下降，将原长链接通过此接口转成短链接再生成二维码将大大提升扫码速度和成功率。</li>
+</ul>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http请求方式: POST</span><br><span class="line">https://api.weixin.qq.com/cgi-bin/shorturl?access_token=ACCESS_TOKEN</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>参数  是否必须    说明</li>
+<li>access_token    是   调用接口凭证</li>
+<li>action  是   此处填long2short，代表长链接转短链接</li>
+<li>long_url    是   需要转换的长链接，支持<a href="http://、https://、weixin://wxpay" target="_blank" rel="external">http://、https://、weixin://wxpay</a> 格式的url</li>
+</ul>
+</blockquote>
+<h1 id="调用举例">调用举例</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -d <span class="string">"&#123;\"action\":\"long2short\",\"long_url\":\"http://wap.koudaitong.com/v2/showcase/goods?alias=128wi9shh&amp;spm=h56083&amp;redirect_count=1\"&#125;"</span> <span class="string">"https://api.weixin.qq.com/cgi-bin/shorturl?access_token=ACCESS_TOKEN"</span></span><br></pre></td></tr></table></figure>
+<h1 id="返回说明">返回说明</h1><blockquote>
+<ul>
+<li>正常情况下，微信会返回下述JSON数据包给公众号：</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">"errcode"</span>:<span class="number">0</span>,<span class="string">"errmsg"</span>:<span class="string">"ok"</span>,<span class="string">"short_url"</span>:<span class="string">"http:\/\/w.url.cn\/s\/AvCo6Ih"</span>&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>参数  说明</li>
+<li>errcode 错误码。</li>
+<li>errmsg  错误信息。</li>
+<li><p>short_url   短链接。</p>
+</li>
+<li><p>错误时微信会返回错误码等信息，JSON数据包示例如下（该示例为AppID无效错误）:</p>
+</li>
+</ul>
+</blockquote>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;"<span class="attribute">errcode</span>":<span class="value"><span class="number">40013</span></span>,"<span class="attribute">errmsg</span>":<span class="value"><span class="string">"invalid appid"</span></span>&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="getWxMsg-py">getWxMsg.py</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding:utf-8</span></span><br><span class="line"><span class="keyword">import</span> urllib</span><br><span class="line"><span class="keyword">import</span> urllib2</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="comment"># 获取access_token</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getToken</span><span class="params">(appid, secret)</span>:</span></span><br><span class="line">    gettoken = <span class="string">'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid='</span> + appid +<span class="string">'&amp;secret='</span> + secret</span><br><span class="line">    f = urllib2.urlopen(gettoken)</span><br><span class="line">    stringJson = f.read()</span><br><span class="line">    access_token = json.loads(stringJson)[<span class="string">'access_token'</span>]</span><br><span class="line">    <span class="keyword">return</span> access_token</span><br><span class="line"><span class="comment"># 获取微信服务器IP地址</span></span><br><span class="line"><span class="comment"># 返回的是一个列表</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getIplist</span><span class="params">(token)</span>:</span></span><br><span class="line">    ipurl = <span class="string">'https://api.weixin.qq.com/cgi-bin/getcallbackip?access_token='</span> + token</span><br><span class="line">    f = urllib2.urlopen(ipurl)</span><br><span class="line">    stringJson = f.read()</span><br><span class="line">    iplist = json.loads(stringJson)[<span class="string">'ip_list'</span>]</span><br><span class="line">    <span class="keyword">return</span> iplist</span><br><span class="line"><span class="comment"># 长链接转短链接接口</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">long2short</span><span class="params">(long_url, token)</span>:</span></span><br><span class="line">    data = <span class="string">'&#123;"action":"long2short","long_url":"'</span> + long_url + <span class="string">'"&#125;'</span></span><br><span class="line">    shortUrl = <span class="string">'https://api.weixin.qq.com/cgi-bin/shorturl?access_token='</span> + token</span><br><span class="line">    f = urllib2.urlopen(url = shortUrl, data = data)</span><br><span class="line">    stringJson = f.read()</span><br><span class="line">    url = json.loads(stringJson)[<span class="string">'short_url'</span>]</span><br><span class="line">    <span class="keyword">return</span> url</span><br></pre></td></tr></table></figure>
+<h1 id="getShort-py">getShort.py</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding:utf-8</span></span><br><span class="line"><span class="keyword">from</span> getWxMsg <span class="keyword">import</span> getToken</span><br><span class="line"><span class="keyword">from</span> getWxMsg <span class="keyword">import</span> long2short</span><br><span class="line"><span class="comment"># 获取token</span></span><br><span class="line"><span class="comment"># appid = 'wx1c90df2cce19a9a4'</span></span><br><span class="line"><span class="comment"># secret = '974a308e03d756ac2b6cc9a9699e6d4d'</span></span><br><span class="line"><span class="comment"># token = getToken(appid, secret)</span></span><br><span class="line"><span class="comment"># print token</span></span><br><span class="line">token = <span class="string">'XlyRmukki_OdSazRTYInnbuDhKYQUdNkxas8HDqKXZcrE5Hgy51vk2JFLdTUxofF6goTJJyCFgECxt3lwWewyirSqGNPqXUgtGoJP_JLiZ8'</span></span><br><span class="line">shorUrl = <span class="string">'http://pycodelife.sinaapp.com/10/'</span></span><br><span class="line"><span class="keyword">print</span> long2short(shorUrl, token)</span><br></pre></td></tr></table></figure>
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
                 <a class="post-title-link" href="/2015/10/28/微信公众平台开发五/" itemprop="url">
                   微信公众平台开发五
                 </a>
@@ -685,129 +817,6 @@
 
 
     
-      
-
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                <a class="post-title-link" href="/2015/10/28/微信公众平台开发一/" itemprop="url">
-                  微信公众平台开发一
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2015-10-28T21:46:35+08:00" content="2015-10-28">
-              2015-10-28
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/10/28/微信公众平台开发一/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/28/微信公众平台开发一/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h1 id="服务器配置">服务器配置</h1><hr>
-<blockquote>
-<ul>
-<li>URL是开发者用来接收微信消息和事件的接口URL。</li>
-<li>Token可由开发者可以任意填写，用作生成签名（该Token会和接口URL中包含的Token进行比对，从而验证安全性）。</li>
-<li>EncodingAESKey由开发者手动填写或随机生成，将用作消息体加解密密钥。</li>
-</ul>
-</blockquote>
-<h1 id="验证服务器地址的有效性">验证服务器地址的有效性</h1><blockquote>
-<ul>
-<li><p>开发者提交信息后，微信服务器将发送GET请求到填写的服务器地址URL上，GET请求携带四个参数：</p>
-</li>
-<li><p>signature: 微信加密签名，signature结合了开发者填写的token参数和请求中的timestamp参数、nonce参数。</p>
-</li>
-<li>timestamp: 时间戳</li>
-<li>nonce: 随机数</li>
-<li>echostr: 随机字符串</li>
-</ul>
-</blockquote>
-<h1 id="加密/校验流程如下：">加密/校验流程如下：</h1><blockquote>
-<ul>
-<li>1.将token、timestamp、nonce三个参数进行字典序排序</li>
-<li>2.将三个参数字符串拼接成一个字符串进行sha1加密</li>
-<li>3.开发者获得加密后的字符串可与signature对比，标识该请求来源于微信</li>
-</ul>
-</blockquote>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/10/28/微信公众平台开发一/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -853,7 +862,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">44</span>
+              <span class="site-state-item-count">45</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
